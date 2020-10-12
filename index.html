@@ -1,0 +1,1554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="js/jquery-3.1.1.min.js"></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Yellowtail&amp;text=ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789?+">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@100;300;400;500;700;900&family=ZCOOL+QingKe+HuangYou&display=swap" rel="stylesheet">
+  <title>CyberBook</title>
+  <style media="screen">
+
+
+    /*==================== reset ====================*/
+
+    :root {
+    font-size: 3px;
+    --neon-color1: #fb46d4;
+    --neon-color2: #16d5e8;
+    --neon-color3: #7475f6;
+    --neon-color4: #ff8b2e;
+    --neon-color5: #34ffed;
+    --neon-color6: #ff497f;
+    --height: 900px;
+    }
+    *{
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      text-decoration: none;
+      font-size: 20px;
+    }
+    body{
+      background: linear-gradient(20deg, #000000, #0c1a61) fixed center center / 100% 100%;
+      overflow-x: hidden;
+      overflow-y: inherit;
+    }
+
+    /* ================= raining ================== */
+
+    hr.raining {
+      /* width: 50px; */
+      border-color: transparent;
+      border-right-color: #fff3;
+      border-right-width: 200px;
+      position: absolute;
+      bottom: 100%;
+      /* transform-origin: 100% 50%; */
+      /* transform-origin: 10% 10%; */
+      transform-origin: 0 0;
+      animation: rain 1s infinite linear;
+    }
+
+    @keyframes rain {
+      0% {
+        transform: rotate(90deg) translateX(0);
+      }
+      100% {
+        transform: rotate(90deg) translateX(var(--height));
+      }
+    }
+
+    /*==================== wrap ====================*/
+
+    .wrap{
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /*==================== header ====================*/
+
+    .header{
+      display: flex;
+      /* display: block; */
+      justify-content: space-between;
+      /* max-width: 100%; */
+      max-width:1200px;
+      height: 56px;
+      margin: 0 auto;
+      background-color: #0008;
+      position: fixed;
+      top:0; /* 注意！這裡沒設之後banner會有問題 */
+      left: 0;
+      right: 0;
+      z-index: 50;
+    }
+
+    /* logo */
+
+    .logo{
+      display: flex;
+    }
+    .neon {
+      width: 147px;
+      height: 47px;
+      margin: 4px 4px;
+      font-family: Yellowtail;
+      font-size: 10rem;
+      font-weight: 500;
+      color: #fff;
+      padding: 0rem 5rem 1rem;
+      border: .5rem solid #fff;
+      border-radius: 2rem;
+      animation: flicker 1.5s infinite alternate; /* 等等 keyframes會用到的地方 */
+      box-sizing: border-box;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .neon2{
+      display: none;
+      font-size: 8.5rem;
+      letter-spacing: 1rem;
+      font-family: 'Noto Sans SC', sans-serif;
+      /* font-family: 'ZCOOL QingKe HuangYou', cursive; */
+    }
+
+    @keyframes flicker {
+    0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+        text-shadow:
+            -0.2rem -0.2rem 1rem #fff,
+            0.2rem 0.2rem 1rem #fff,
+            0 0 2rem var(--neon-color1),
+            0 0 4rem var(--neon-color1),
+            0 0 6rem var(--neon-color1),
+            0 0 8rem var(--neon-color1),
+            0 0 10rem var(--neon-color1);
+        box-shadow:
+            0 0 .5rem #fff,
+            inset 0 0 .5rem #fff,
+            0 0 2rem var(--neon-color2),
+            inset 0 0 2rem var(--neon-color2),
+            0 0 4rem var(--neon-color2),
+            inset 0 0 4rem var(--neon-color2);
+    }
+
+    20%, 24%, 55% {
+        text-shadow: none;
+        box-shadow: none;
+    }
+    }
+
+    @keyframes flicker2 {
+    0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+        text-shadow:
+            -0.2rem -0.2rem 1rem #fff,
+            0.2rem 0.2rem 1rem #fff,
+            0 0 2rem var(--neon-color3),
+            0 0 4rem var(--neon-color3),
+            0 0 6rem var(--neon-color3),
+            0 0 8rem var(--neon-color3),
+            0 0 10rem var(--neon-color3);
+        box-shadow:
+            0 0 .5rem #fff,
+            inset 0 0 .5rem #fff,
+            0 0 2rem var(--neon-color4),
+            inset 0 0 2rem var(--neon-color4),
+            0 0 4rem var(--neon-color4),
+            inset 0 0 4rem var(--neon-color4);
+    }
+
+    20%, 24%, 55% {
+        text-shadow: none;
+        box-shadow: none;
+    }
+    }
+
+    @keyframes flicker3 {
+    0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+        text-shadow:
+            -0.2rem -0.2rem 1rem #fff,
+            0.2rem 0.2rem 1rem #fff,
+            0 0 2rem var(--neon-color4),
+            0 0 4rem var(--neon-color4),
+            0 0 6rem var(--neon-color4),
+            0 0 8rem var(--neon-color4),
+            0 0 10rem var(--neon-color4);
+        box-shadow:
+            0 0 .5rem #fff,
+            inset 0 0 .5rem #fff,
+            0 0 2rem var(--neon-color3),
+            inset 0 0 2rem var(--neon-color3),
+            0 0 4rem var(--neon-color3),
+            inset 0 0 4rem var(--neon-color3);
+    }
+
+    20%, 24%, 55% {
+        text-shadow: none;
+        box-shadow: none;
+    }
+    }
+
+    @keyframes flicker4 {
+    0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+        text-shadow:
+            -0.2rem -0.2rem 1rem #fff,
+            0.2rem 0.2rem 1rem #fff,
+            0 0 2rem var(--neon-color5),
+            0 0 4rem var(--neon-color5),
+            0 0 6rem var(--neon-color5),
+            0 0 8rem var(--neon-color5),
+            0 0 10rem var(--neon-color5);
+        box-shadow:
+            0 0 .5rem #fff,
+            inset 0 0 .5rem #fff,
+            0 0 2rem var(--neon-color6),
+            inset 0 0 2rem var(--neon-color6),
+            0 0 4rem var(--neon-color6),
+            inset 0 0 4rem var(--neon-color6);
+    }
+
+    20%, 24%, 55% {
+        text-shadow: none;
+        box-shadow: none;
+    }
+    }
+
+    @keyframes noflicker{
+    0%, 100% {
+        text-shadow:
+            -0.2rem -0.2rem 1rem #fff,
+            0.2rem 0.2rem 1rem #fff,
+            0 0 2rem var(--neon-color1),
+            0 0 4rem var(--neon-color1),
+            0 0 6rem var(--neon-color1),
+            0 0 8rem var(--neon-color1),
+            0 0 10rem var(--neon-color1);
+        box-shadow:
+            0 0 .5rem #fff,
+            inset 0 0 .5rem #fff,
+            0 0 2rem var(--neon-color2),
+            inset 0 0 2rem var(--neon-color2),
+            0 0 4rem var(--neon-color2),
+            inset 0 0 4rem var(--neon-color2);
+    }
+    }
+
+    .neon:hover {
+        /* animation: noflicker 1.5s infinite alternate; */
+    }
+    .logo:hover .neon1{
+      display: none;
+    }
+    .logo:hover .neon2{
+      display: flex;
+    }
+
+    /* menu */
+    .menu ul{
+      float: right;
+    }
+    .menu li{
+      float: left;
+      margin: 7px 8px;
+      display: flex;
+    }
+    .menu li a{
+      display: block;
+      text-decoration:none;
+      text-align: center;
+      /* font-weight: bold; */
+      font-size: 20px;
+      color: #fff;
+      line-height:40px;
+      width: 100px;
+      border: 1px solid #fff;
+      border-radius: 2rem;
+
+      /* animation: noflicker 1.5s infinite alternate; */
+      animation: flicker 1.5s infinite alternate;
+
+    }
+    .menu li a:hover{
+      /* transition-duration: 0.3s; */
+      font-weight: bold;
+      border: 2px solid #fff;
+      line-height:38px;
+      width: 98px;
+    }
+
+    /* hamberger */
+    .hamburger{
+      display:none;
+      color: #fff;
+      font-size: 50px;
+      font-weight: bold;
+      text-decoration:none;
+      border: 1px solid #fff;
+      border-radius: 2rem;
+      line-height:45px;
+      height: 45px;
+      width: 45px;
+      margin: 5px;
+      text-align: center;
+      float:right;
+
+      animation: flicker 1.5s infinite alternate;
+
+    }
+    .hamburger:active{
+      border: 2px solid #fff;
+      font-size: 53px;
+      height: 43px;
+      width: 43px;
+    }
+
+    @media(max-width: 768px){
+      .hamburger{
+        display:block;
+      }
+      .header{
+      /* background-color: #2d2d2d; */
+        background-color: #0008;
+      }
+      .header ul,.header li{
+        float: none;
+      }
+      .header li a{
+        text-align: center;
+        width: 100%;
+      }
+      .menu{
+        float: right;
+        width: 110px;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.5s;
+        position: absolute;
+        top: 56px;
+        right: 0px;
+        background-color: #0008;
+        border-radius: 0 0 2rem 2rem;
+      }
+      .menu a{
+        margin: 7px 0;
+
+      }
+      .show-menu{
+        max-height: 400px;
+      }
+    }
+
+    /*==================== banner ====================*/
+
+    .banner{
+        position: relative;
+        width: 100%;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        top: 56px;
+        z-index: 10;
+    }
+    .pic{
+        width: 100%;
+        overflow: hidden;
+        box-shadow:
+            0 0 10px #fff3,
+            0 0 15px #fff3,
+            0 0 20px #fff3,
+            0 0 30px #fff3;
+    }
+    .carousel{
+        display: flex;
+        flex-wrap: nowrap;
+        transition: all 0.5s;
+    }
+    .carousel li{
+      min-width: 100%;
+    }
+
+    /* cyberphunk-box */
+    .cyberphunk-box {
+      z-index: -10;
+      width: 100%;
+      position: relative;
+      /* overflow: hidden; */
+    }
+    .cyberphunk-box:before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      content: '';
+      background: repeating-linear-gradient(to bottom, transparent, transparent 2px, rgba(0,0,0,0.7) 3px);
+      animation: img-blink 0.1s infinite linear;
+      z-index: 10;
+    }
+
+    @keyframes img-blink {
+      0% {
+        transform: translateY(0);
+      }
+      100% {
+        transform: translateY(-1px);
+      }
+    }
+
+    .carousel img{
+      width: 100%;
+      vertical-align:top;  /* 這樣下面就不會有間隙 */
+    }
+
+    /* idx */
+    .idx{
+      width: 100%;
+      background-color: #0003;
+      position: absolute;
+      bottom: 0;
+      display: flex;
+      justify-content: center;
+    }
+    .circle{
+      width: 20px;
+      height: 5px;
+      margin: 12px 5px;
+      border: 1px solid #fff;
+      border-radius: 2rem;
+      display: inline-block;
+      cursor: pointer;
+      box-shadow: inset -1px -1px 3px rgba(0,0,0,.3);
+      animation: flicker 1.5s infinite alternate;
+    }
+    .circle-active{
+      animation: flicker2 1.5s infinite alternate;
+    }
+    .circle:hover{
+      border: 2px solid #fff;
+      width: 18px;
+      height: 3px;
+    }
+
+    /* arrow */
+    .arrow{
+      position: absolute;
+      display: none;
+      width: 40px;
+      height: 80px;
+      background-color: #0005;
+      font-family:"宋体";
+      color:#fff;
+      border: 1px solid #fff;
+      line-height:80px;
+      text-align:center;
+      font-size:30px;
+      cursor: pointer;
+      user-select: none;
+
+      animation: flicker 1.5s infinite alternate;
+    }
+    .arrow-l{
+      left: 0;
+      border-radius: 0 25% 25% 0;
+    }
+    .arrow-r{
+      right: 0;
+      border-radius: 25% 0 0 25%;
+    }
+    .arrow:hover{
+      background-color: #0007;
+      /* color:#ffffffcc; */
+      font-weight: bold;
+      border: 2px solid #fff;
+    }
+    .banner:hover .arrow{
+      display: block;
+    }
+    @media(max-width: 600px){
+      .banner{
+        /* display: none; */
+      }
+    }
+
+    /*==================== broadcast ====================*/
+
+    .broadcast{
+      width: 100%;
+      height: 38px;
+      position: sticky;
+      top: 56px;
+      margin: 56px auto 50px;
+      background-color: #0008;
+      /* background-color: #fffc; */
+      display: flex;
+      align-items: center;
+      z-index: 20;
+    }
+
+    .broad-tag{
+      /* width: 100px; */
+      /* height: 20px; */
+      border: 1px solid #fff;
+      border-radius: 2rem;
+    }
+    .broad-tag p{
+      cursor: default;
+      text-align: center;
+      padding: 0 15px;
+      color: #fff;
+      font-size: 18px;
+      line-height: 30px;
+      font-family: Yellowtail;
+      animation: flicker2 1.5s infinite alternate;
+    }
+
+    .broad_box{
+      flex: 1;
+      height:20px;
+      overflow:hidden;
+    }
+    .broad{
+      text-align: center;
+      /* padding: 0 20px; */
+      height:20px;
+      overflow:hidden;
+    }
+    .broad a{
+      width: 100%;
+      height: 100%;
+      display: block;
+      color: #ec7fba;
+      /* color: #fff; */
+      font-size: 18px;
+      line-height: 20px;
+    }
+
+      @media(max-width: 768px){
+        .broadcast{
+          display: none;
+        }
+      }
+
+    /*==================== content ====================*/
+
+    .content{
+      margin: 60px auto;
+      max-width: 100%;
+      /* background-color: #fff1; */
+      background-color: #0003;
+      padding: 70px 0;
+      /* overflow: hidden; */
+      position: relative;
+      z-index: 10;
+    }
+    .content ul{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      perspective: 1000px;
+    }
+    .content-li{
+      flex: 1;
+      display: flex;
+      flex-direction: column; /* 預設是row */
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      margin: 0 5px;
+      max-width: 360px;
+      perspective: 1000px;
+      transform-style: preserve-3d;
+      transform: translatez(50px);
+      transition: transform 300ms ease-out;
+    }
+    .content-licon{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: transform 200ms ease-out;
+    }
+    .content-li:hover .content-licon{
+      transform-style: preserve-3d;
+      transform: translatez(100px);
+      transition: transform 200ms ease-out;
+    }
+    .content-li h2{
+      margin: 7px 0;
+      display: flex;
+      align-items: center;
+    }
+    .content-li h2 a{
+      border: 1px solid #ffc4e1;
+      border-radius: 2rem;
+      padding: 3px 7px;
+      font-weight: 400;
+      font-size: 22px;
+      color: #b1ffe3;
+      animation: flicker4 1.5s infinite alternate;
+    }
+    .content-li h2 a:hover{
+      color: #fff;
+      border: 2px solid #ffc4e1;
+      padding: 2px 6px;
+      font-weight:bold;
+    }
+
+    .content-li img{
+      margin: 12px;
+      border-radius: 2rem;
+      box-shadow:
+          0 0 10px #fff3,
+          0 0 15px #fff3,
+          0 0 20px #fff3,
+          0 0 30px #fff3;
+          /* transform-style: preserve-3d; */
+          /* transform: translatez(50px); */
+          transition: transform 300ms ease-out;
+    }
+    .content-li h3 a, .content-li p{
+      color: #ddd;
+    }
+    .content-li p span{
+      color: #f65ec3;
+    }
+
+    .content-li .arrow{
+      display: block;
+    }
+
+    @media(max-width: 768px){
+      .content-licon{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 50px 0;
+      }
+      .content ul{
+        display: block;
+      }
+      .content-li{
+        margin: 50px auto;
+      }
+      .content-li h2{
+        margin: 20px;
+      }
+      .content-li h2 a{
+        font-size: 26px;
+        padding: 5px 10px;
+      }
+      .content-li h2 a:hover{
+        padding: 4px 9px;
+      }
+      .content-li img{
+        width: 220px;
+      }
+    }
+
+    @media(max-width: 600px){
+      .content{
+        /* display: none; */
+      }
+    }
+
+
+
+    /*==================== category ====================*/
+
+    .category{
+      position: relative;
+      z-index: 10;
+      background-color: #0003;
+      width: 100%;
+      /* overflow: hidden; */
+      /* background-color: #fff1; */
+    }
+    .category ul{
+    	display: flex;
+    	flex-wrap: wrap;
+    	max-width: 100%;
+    	margin: 200px auto;
+    	padding: 50px 10px;
+      perspective: 1500px;
+    }
+    .category li{
+    	width: 25%;
+    	display: flex;
+    	flex-direction: column;
+    	align-items: center;
+    	margin: 50px 0;
+      perspective: 1500px;
+      transform-style: preserve-3d;
+      transform: translatez(50px);
+      transition: transform 300ms ease-out;
+    }
+    .product-licon{
+      transition: transform 200ms ease-out;
+    }
+    .category li:hover .product-licon{
+      transform-style: preserve-3d;
+      transform: translatez(100px);
+      transition: transform 200ms ease-out;
+    }
+    .category li h2{
+      margin-bottom: 8px;
+    }
+    .category li h2 a{
+      font-weight: 100;
+      font-size: 26px;
+      color: var(--neon-color2);
+      text-shadow:
+          0 0 5px var(--neon-color2),
+          0 0 10px var(--neon-color2),
+          0 0 15px var(--neon-color2);
+    }
+    .category li h2 a:hover{
+      font-weight:bold;
+    }
+    .category li h3 a, .category li p{
+      color: #ddd;
+    }
+    .category li p span{
+      color: #f65ec3;
+    }
+    .category li img{
+      position: relative;
+      border-radius: 2rem;
+      box-shadow:
+          0 0 10px #fff3,
+          0 0 15px #fff3,
+          0 0 20px #fff3,
+          0 0 30px #fff3;
+    }
+
+    @media(max-width: 768px){
+		.category li{
+			width: 33%;
+		}
+    }
+
+    @media(max-width: 600px){
+      .category ul{
+        margin: 270px auto;
+      }
+      .category li{
+    		width: 50%;
+        /* display: none; */
+    	}
+    }
+    @media(max-width: 400px){
+    	.category li{
+        margin: 20px;
+    		width: 100%;
+        /* display: none; */
+    	}
+    }
+
+
+    /*==================== mail ====================*/
+
+    .mail{
+      background-color: #0003;
+      /* background-color: #fff1; */
+      padding: 60px 0;
+      /* display: flex; */
+    }
+
+    .mail-title{
+      cursor: default;
+      color: #fff;
+      width: 115px;
+      margin: 0 auto;
+      padding: 12px;
+      text-align: center;
+      font-size: 25px;
+      border: 1px solid #fff;
+      border-radius: 2rem;
+      animation: flicker2 1.5s infinite alternate;
+    }
+    .email-row{
+      justify-content: space-between;
+      display: flex;
+      padding: 0 3% 50px;
+      margin: 50px auto 0;
+    }
+    .email-col{
+      position: relative;
+      display: inline-block;
+      width: 44%;
+      padding: 0 3%;
+    }
+    .input-style {
+      box-sizing: border-box;
+      border: none;
+      font-size: 1em;
+      padding-left: 20px;
+      width: 100%;
+      margin-bottom: 15px;
+    }
+    .input-height{
+      height: 59px;
+    }
+    #mail-message {
+      height: 130px;
+      padding-top: 15px;
+      resize:none;
+      /* margin-bottom: 22px; */
+    }
+    #submitButton {
+      cursor: pointer;
+      background: transparent;
+      color: #fff;
+      width: 150px;
+      height: 40px;
+      border: 1px solid #fff;
+      border-radius: 50px;
+      padding-right: 20px;
+      margin-top: 7px;
+      margin-bottom: 26px;
+      animation: flicker3 1.5s infinite alternate;
+    }
+    #submitButton:hover{
+      font-weight: bold;
+      border: 2px solid #fff;
+    }
+
+    @media(max-width: 768px){
+      .email-row{
+        display: block;
+      }
+      .email-col{
+        display: block;
+        width: 80%;
+        margin: 0 auto;
+      }
+    }
+
+    @media(max-width: 600px){
+      .mail{
+        /* display: none; */
+      }
+    }
+
+    /*==================== footer ====================*/
+
+    .footer{
+      width: 230px;
+      margin: 0 auto;
+      border-radius: 2rem;
+      background-color: #0008;
+      color: #fff;
+      text-align: center;
+      padding: 13px 0;
+      font-family: Yellowtail;
+      animation: flicker4 1.5s infinite alternate;
+    }
+
+    @media(max-width: 600px){
+      .footer{
+        /* display: none; */
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="wrap">
+
+    <!--================= Header ================-->
+
+    <div class="header">
+
+      <div class="logo">
+
+        <!-- <h1><a href="#">CyberBook</a></h1> -->
+
+        <a href="#"><h1 class="neon neon1">CyberBook</h1><h1 class="neon neon2">賽博部客</h1></a>
+        <!-- <a href="#"><h1 class="neon neon2">賽博部客</h1></a> -->
+
+      </div>
+
+      <div class="menu">
+       <ul>
+        <li><a href="###">活動資訊</a></li>
+        <li><a href="#category">全站分類</a></li>
+        <li><a href="#mail">聯絡我們</a></li>
+        <li><a href="###">會員登入</a></li>
+        <li><a href="###">購物車</a></li>
+       </ul>
+      </div>
+
+      <a href="" class="hamburger">≡</a>
+
+    </div>
+
+    <!--=================== Banner ===================-->
+
+    <div class="banner">
+
+        <div class="pic">
+            <ul class="carousel">
+
+              <li><a href="#">
+                <div class="cyberphunk-box">
+                  <picture>
+                    <source srcset="http://fakeimg.pl/600x600/fff/3f232a/?text=AD-1" media="(max-width: 600px)">
+                    <!-- <img src="http://fakeimg.pl/1200x420/fff/3f232a/?text=AD-1" > -->
+                    <img src="1.jpg" alt="">
+                  </picture>
+                </div>
+              </a></li>
+
+              <li><a href="#">
+                <div class="cyberphunk-box">
+                  <picture>
+                    <source srcset="http://fakeimg.pl/600x600/fff/3f232a/?text=AD-2" media="(max-width: 600px)">
+                    <!-- <img src="http://fakeimg.pl/1200x420/fff/3f232a/?text=AD-2"> -->
+                    <img src="2.jpg" alt="">
+                  </picture>
+                </div>
+              </a></li>
+
+              <li><a href="#">
+                <div class="cyberphunk-box">
+                  <picture>
+                    <source srcset="http://fakeimg.pl/600x600/fff/3f232a/?text=AD-3" media="(max-width: 600px)">
+                    <img src="http://fakeimg.pl/1200x420/fff/3f232a/?text=AD-3">
+                    <!-- <img src="3.jpg" alt=""> -->
+                  </picture>
+                </div>
+              </a></li>
+
+              <li><a href="#">
+                <div class="cyberphunk-box">
+                  <picture>
+                    <source srcset="http://fakeimg.pl/600x600/fff/3f232a/?text=AD-4" media="(max-width: 600px)">
+                    <!-- <img src="http://fakeimg.pl/1200x420/fff/3f232a/?text=AD-4"> -->
+                    <img src="4.jpg" alt="">
+                  </picture>
+                </div>
+              </a></li>
+
+            </ul>
+        </div>
+
+        <div class="idx">
+            <div class="circle circle-active"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+        </div>
+
+        <div class="arrow arrow-l"><</div>
+        <div class="arrow arrow-r">></div>
+
+    </div>
+
+    <!--=================== broadcast ==================-->
+
+    <div class="broadcast">
+
+      <div class="broad-tag">
+        <!-- <p>提 醒</p> -->
+        <p>WARNNING</p>
+      </div>
+
+      <div id="broad_box" class="broad_box" >
+        <div id="a1" class="broad" >
+          <a href="#" >
+            <span class="cyberphunk-box">
+              賽博部客(cyberbook)不會以電話告知您前往ATM操作任何動作。請定期更改密碼，以確保帳戶安全。
+            </span>
+          </a>
+        </div>
+        <div id="a2" class="broad">
+          <a href="#">
+            <span class="cyberphunk-box">
+            【暫停寄送部份海外國家公告】受新型冠狀病毒疫情影響，暫停寄送部份海外國家，請查看公告內連結瞭解完整訊息。
+            </span>
+          </a>
+        </div>
+        <div id="a3" class="broad">
+          <a href="#">
+            <span class="cyberphunk-box">
+              小心詐騙！！若有訂單疑問，請撥客服專線02-******,或透過客服信箱反應。
+            </span>
+          </a>
+        </div>
+        <div id="a4" class="broad">
+          <a href="#">
+            <span class="cyberphunk-box">
+              【雙十節連假服務調整公告】10/9-10/11 連續假期期間：◎超商取貨-正常配送。
+            </span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <!--=================== content ==================-->
+    <!-- special / best-sell / topic -->
+    <!-- .content>.content-title+ul>li.content-li*3>(h2>a)+img+h3+p -->
+    <div class="content">
+      <div class="content-title"></div>
+
+      <ul>
+
+        <li class="content-li">
+        	<div class="content-licon">
+    		    <h2><a href="###">今日特惠</a></h2>
+            <a href="###">
+              <div class="cyberphunk-box">
+                <!-- <img src="http://fakeimg.pl/180x240/fff/57d9fb/?text=book"> -->
+                <img src="5.jpg">
+              </div>
+            </a>
+	          <h3><a href="###">書名</a></h3>
+	          <p>優惠價: <span>75</span> 折 <span>267</span> 元</p>
+        	</div>
+          <div class="arrow arrow-l"><</div>
+          <div class="arrow arrow-r">></div>
+        </li>
+
+        <li class="content-li">
+        	<div class="content-licon">
+	          <h2><a href="###">熱銷品項</a></h2>
+            <a href="###">
+              <div class="cyberphunk-box">
+                <!-- <img src="http://fakeimg.pl/180x240/fff/57d9fb/?text=book"> -->
+                <img src="6.jpg">
+              </div>
+            </a>
+	          <h3><a href="###">書名</a></h3>
+	          <p>優惠價: <span>75</span> 折 <span>267</span> 元</p>
+        	</div>
+          <div class="arrow arrow-l"><</div>
+          <div class="arrow arrow-r">></div>
+        </li>
+
+        <li class="content-li">
+        	<div class="content-licon">
+	          <h2><a href="###">最具話題性</a></h2>
+            <a href="###">
+              <div class="cyberphunk-box">
+                <!-- <img src="http://fakeimg.pl/180x240/fff/57d9fb/?text=book"> -->
+                <img src="7.jpg">
+              </div>
+            </a>
+	          <h3><a href="###">書名</a></h3>
+	          <p>優惠價: <span>75</span> 折 <span>267</span> 元</p>
+        	</div>
+          <div class="arrow arrow-l"><</div>
+          <div class="arrow arrow-r">></div>
+        </li>
+
+      </ul>
+
+    </div>
+
+    <!--================ category ====================-->
+
+    <a name="category"></a>
+    <div class="category">
+
+		<ul class="products">
+			<li>
+				<div class="product-licon">
+					<h2><a href="###">文學</a></h2>
+          <a href="###">
+            <div class="cyberphunk-box">
+              <img src="http://fakeimg.pl/180x240/fff/f448f2/?text=book">
+              <!-- <img src="8.jpg"> -->
+            </div>
+          </a>
+					<h3><a href="###">書名</a></h3>
+					<p>價格: <span>330</span> 元</p>
+				</div>
+			</li>
+			<li>
+				<div class="product-licon">
+					<h2><a href="###">商業理財</a></h2>
+          <a href="###">
+            <div class="cyberphunk-box">
+              <img src="http://fakeimg.pl/180x240/fff/f448f2/?text=book">
+              <!-- <img src="9.jpg"> -->
+            </div>
+          </a>
+					<h3><a href="###">書名</a></h3>
+					<p>價格: <span>330</span> 元</p>
+				</div>
+			</li>
+			<li>
+				<div class="product-licon">
+					<h2><a href="###">藝術</a></h2>
+          <a href="###">
+            <div class="cyberphunk-box">
+              <img src="http://fakeimg.pl/180x240/fff/f448f2/?text=book">
+              <!-- <img src="10.jpg"> -->
+            </div>
+          </a>
+					<h3><a href="###">書名</a></h3>
+					<p>價格: <span>330</span> 元</p>
+				</div>
+			</li>
+			<li>
+				<div class="product-licon">
+					<h2><a href="###">歷史地理</a></h2>
+          <a href="###">
+            <div class="cyberphunk-box">
+              <img src="http://fakeimg.pl/180x240/fff/f448f2/?text=book">
+              <!-- <img src="11.jpg"> -->
+            </div>
+          </a>
+					<h3><a href="###">書名</a></h3>
+					<p>價格: <span>330</span> 元</p>
+				</div>
+			</li>
+			<li>
+				<div class="product-licon">
+					<h2><a href="###">社會科學</a></h2>
+          <a href="###">
+            <div class="cyberphunk-box">
+              <img src="http://fakeimg.pl/180x240/fff/f448f2/?text=book">
+              <!-- <img src="12.jpg"> -->
+            </div>
+          </a>
+					<h3><a href="###">書名</a></h3>
+					<p>價格: <span>330</span> 元</p>
+				</div>
+			</li>
+			<li>
+				<div class="product-licon">
+					<h2><a href="###">自然科學</a></h2>
+          <a href="###">
+            <div class="cyberphunk-box">
+              <img src="http://fakeimg.pl/180x240/fff/f448f2/?text=book">
+              <!-- <img src="13.jpg"> -->
+            </div>
+          </a>
+					<h3><a href="###">書名</a></h3>
+					<p>價格: <span>330</span> 元</p>
+				</div>
+			</li>
+			<li>
+				<div class="product-licon">
+					<h2><a href="###">心理</a></h2>
+          <a href="###">
+            <div class="cyberphunk-box">
+              <img src="http://fakeimg.pl/180x240/fff/f448f2/?text=book">
+              <!-- <img src="14.jpg"> -->
+            </div>
+          </a>
+					<h3><a href="###">書名</a></h3>
+					<p>價格: <span>330</span> 元</p>
+				</div>
+			</li>
+			<li>
+				<div class="product-licon">
+					<h2><a href="###">醫療保健</a></h2>
+          <a href="###">
+            <div class="cyberphunk-box">
+              <img src="http://fakeimg.pl/180x240/fff/f448f2/?text=book">
+              <!-- <img src="15.jpg"> -->
+            </div>
+          </a>
+					<h3><a href="###">書名</a></h3>
+					<p>價格: <span>330</span> 元</p>
+				</div>
+			</li>
+			<li>
+				<div class="product-licon">
+					<h2><a href="###">飲食</a></h2>
+          <a href="###">
+            <div class="cyberphunk-box">
+              <img src="http://fakeimg.pl/180x240/fff/f448f2/?text=book">
+              <!-- <img src="16.jpg"> -->
+            </div>
+          </a>
+					<h3><a href="###">書名</a></h3>
+					<p>價格: <span>330</span> 元</p>
+				</div>
+			</li>
+			<li>
+				<div class="product-licon">
+					<h2><a href="###">娛樂</a></h2>
+          <a href="###">
+            <div class="cyberphunk-box">
+              <img src="http://fakeimg.pl/180x240/fff/f448f2/?text=book">
+              <!-- <img src="17.jpg"> -->
+            </div>
+          </a>
+					<h3><a href="###">書名</a></h3>
+					<p>價格: <span>330</span> 元</p>
+				</div>
+			</li>
+			<li>
+				<div class="product-licon">
+					<h2><a href="###">旅遊</a></h2>
+          <a href="###">
+            <div class="cyberphunk-box">
+              <img src="http://fakeimg.pl/180x240/fff/f448f2/?text=book">
+              <!-- <img src="18.jpg"> -->
+            </div>
+          </a>
+					<h3><a href="###">書名</a></h3>
+					<p>價格: <span>330</span> 元</p>
+				</div>
+			</li>
+			<li>
+				<div class="product-licon">
+					<h2><a href="###">宗教</a></h2>
+          <a href="###">
+            <div class="cyberphunk-box">
+              <img src="http://fakeimg.pl/180x240/fff/f448f2/?text=book">
+              <!-- <img src="19.jpg"> -->
+            </div>
+          </a>
+					<h3><a href="###">書名</a></h3>
+					<p>價格: <span>330</span> 元</p>
+				</div>
+			</li>
+      <li>
+				<div class="product-licon">
+					<h2><a href="###">語言</a></h2>
+          <a href="###">
+            <div class="cyberphunk-box">
+              <img src="http://fakeimg.pl/180x240/fff/f448f2/?text=book">
+              <!-- <img src="20.jpg"> -->
+            </div>
+          </a>
+					<h3><a href="###">書名</a></h3>
+					<p>價格: <span>330</span> 元</p>
+				</div>
+			</li>
+      <li>
+				<div class="product-licon">
+					<h2><a href="###">計算機</a></h2>
+          <a href="###">
+            <div class="cyberphunk-box">
+              <img src="http://fakeimg.pl/180x240/fff/f448f2/?text=book">
+              <!-- <img src="21.jpg"> -->
+            </div>
+          </a>
+					<h3><a href="###">書名</a></h3>
+					<p>價格: <span>330</span> 元</p>
+				</div>
+			</li>
+      <li>
+				<div class="product-licon">
+					<h2><a href="###">漫畫</a></h2>
+          <a href="###">
+            <div class="cyberphunk-box">
+              <img src="http://fakeimg.pl/180x240/fff/f448f2/?text=book">
+              <!-- <img src="22.jpg"> -->
+            </div>
+          </a>
+					<h3><a href="###">書名</a></h3>
+					<p>價格: <span>330</span> 元</p>
+				</div>
+			</li>
+      <li>
+				<div class="product-licon">
+					<h2><a href="###">其他</a></h2>
+          <a href="###">
+            <div class="cyberphunk-box">
+              <img src="http://fakeimg.pl/180x240/fff/f448f2/?text=book">
+            </div>
+          </a>
+					<h3><a href="###">書名</a></h3>
+					<p>價格: <span>330</span> 元</p>
+				</div>
+			</li>
+		</ul>
+
+    </div>
+
+    <!--================ email ================-->
+
+    <div class="mail">
+
+      <a name="mail"></a>
+
+      <div class="mail-title">聯絡我們</div>
+
+      <div id="email-container">
+        <form id="validationForm"  > <!-- method="post" -->
+
+          <div class="email-row">
+
+            <div class="email-col">
+              <input id="email-name" class="input-style input-height" type="text" name="name" placeholder="請輸入您的姓名">
+              <input id="email-address" class="input-style input-height" type="text" name="email" placeholder="請輸入您的電子信箱">
+              <input id="subject" class="input-style input-height" type="text" name="subject" placeholder="請輸入主旨">
+            </div>
+
+            <div class="email-col">
+              <textarea id="mail-message" class="input-style" name="massage" rows="8" cols="80" placeholder="請描述您的狀況"></textarea>
+              <button id="submitButton" class="input-style" type="submit" name="submit">寄 信</button>
+            </div>
+
+          </div>
+
+        </form>
+        <div id="error"></div>
+      </div>
+
+    </div>
+
+    <!--================= Footer ====================-->
+
+    <div class="footer">
+      &copy; copyright 2020 by furecool
+    </div>
+
+  </div>
+
+  <script type="text/javascript">
+
+      //=================== raining  ====================
+
+
+      // 讓所有圖片讀完再運行，不然(ctrl + F5 會刪除快取)抓不到正確 $(document).height()
+      window.onload=function(){
+
+        $(window).resize(function(){
+          RootHeight();
+          raining();
+          });
+
+        // $(document).height()賦值給 :root的一個變數屬性"--height"，即下雨的高度
+        RootHeight();
+        function RootHeight(){
+          let docHeight = $(document).height();
+          document.documentElement.style.setProperty('--height', docHeight-200 + 'px');
+
+          // console.log(document.documentElement.style.getPropertyValue('--height'));
+
+        }
+
+        raining();
+        function raining(){
+          // 有 .raining的話先刪掉，不然 $(window).resize時會重複呼叫，螢幕會爆
+          $(".raining").detach();
+          let rainElement;
+          let counter = 50; // 雨下多大
+          for (let i = 0; i < counter; i++) {
+            rainElement = document.createElement("hr");
+            rainElement.className = "raining";
+            rainElement.style.left = Math.floor(Math.random() * window.innerWidth) + "px";
+            rainElement.style.animationDuration = 0.2 + Math.random() * 0.2 + "s";
+            rainElement.style.animationDelay = Math.random() * 5 + "s";
+            document.body.appendChild(rainElement);
+          }
+        }
+
+      };
+
+      //=================== header  ====================
+
+      // hamburger
+      $(document).ready(function() {
+         $('.hamburger').on('click',  function(e){
+            e.preventDefault();
+            $('.menu').toggleClass('show-menu');
+        });
+      });
+
+
+      //==================== banner ====================
+
+      // 宣告變數
+      var $circles = $('.idx>.circle')
+      var $carousel = $('.carousel')
+      var $imgs = $carousel.children('li')
+      var $picWidth = $(".pic").width()
+      var current = 0
+
+
+
+      // 初始的function(複製圖片、連結圖片和索引圓點)，圖片滑動
+
+      cloneImgs()
+      bindEvents()
+      $carousel.css({"transform":"translateX(-"+$picWidth+"px)"});
+      // console.log($imgs[current]);
+      // console.log($($imgs[current]).index("img"));
+
+      // 動態刷新 $picWidth
+      $(window).resize(function(){
+        $picWidth = $(".pic").width()
+      });
+
+      // 關於左右箭頭
+      $('.banner .arrow-l').on('click', function () {
+          slideTo(current-1)
+      })
+
+      $('.banner .arrow-r').on('click', function () {
+          slideTo(current+1)
+      })
+
+      // 關於計時器
+      var timer = setInterval(function () {
+          slideTo(current+1)
+      },2000)
+
+      $('.banner').on('mouseenter', function () {
+          window.clearInterval(timer)
+      })
+
+      $('.banner').on('mouseleave', function () {
+          timer =setInterval(function () {
+              slideTo(current+1)
+          },2000)
+      })
+
+      // === function們 ===
+
+      // 複製第一張和最後一張圖，分別在最後和最前(4>1234>1)
+      function cloneImgs(){
+          var $firstCopy = $imgs.eq(0).clone(true)
+          var $lastCopy = $imgs.eq($imgs.length-1).clone(true)
+
+          $carousel.append($firstCopy)
+          $carousel.prepend($lastCopy)
+      }
+
+      // 將索引圓點與 slideTo(index) function 連結
+      function bindEvents(){
+          $('.idx').on('click', '.circle', function (e) {
+              var $circle = $(e.currentTarget)
+              var index = $circle.index()
+              slideTo(index)
+          })
+      }
+
+      // 滑到哪一張圖
+      function slideTo(index) {
+          if(index> $circles.length-1){
+              index = 0
+          }else if(index<0){
+              index = $circles.length-1
+          }
+
+          if (current === $circles.length-1 && index ===0) {
+              //最后一张到第一张
+              $carousel.css({transform:`translateX(${-($circles.length +1) * $picWidth}px)`})
+                  .one('transitionend', function () {
+                      $carousel.hide()
+                          .offset()
+                      $carousel.css({transform: `translateX(${-(index+1) * $picWidth}px)`})
+                          .show()
+                  })
+
+          }else if (current === 0 && index === $circles.length-1) {
+              //第一张到最后一张
+              $carousel.css({transform:`translateX(0px)`})
+                  .one('transitionend', function () {
+                      $carousel.hide()
+                          .offset()
+                      $carousel.css({transform: `translateX(${-(index+1) * $picWidth}px)`})
+                          .show()
+                  })
+
+          }else {
+              $carousel.css({transform:`translateX(${- (index+1) * $picWidth}px)`})
+          }
+          current = index
+          $($circles).removeClass("circle-active");
+          $($circles[current]).addClass("circle-active");
+
+      }
+
+
+      // ================= broardcast =================
+
+      function slideLine(box,stf,delay,speed,h){
+        //取得id
+        var slideBox = document.getElementById(box);
+        //預設值 delay:幾毫秒滾動一次(1000毫秒=1秒)
+        //       speed:數字越小越快，h:高度
+        var delay = delay||1000,speed = speed||20,h = h||20;
+        var tid = null,pause = false;
+        //setInterval跟setTimeout的用法可以咕狗研究一下~
+        var s = function(){tid=setInterval(slide, speed);}
+        //主要動作的地方
+        var slide = function(){
+        //當滑鼠移到上面的時候就會暫停
+          if(pause) return;
+        //滾動條往下滾動 數字越大會越快但是看起來越不連貫，所以這邊用1
+          slideBox.scrollTop += 1;
+        //滾動到一個高度(h)的時候就停止
+          if(slideBox.scrollTop%h == 0){
+        //跟setInterval搭配使用的
+            clearInterval(tid);
+        //將剛剛滾動上去的前一項加回到整列的最後一項
+            slideBox.appendChild(slideBox.getElementsByTagName(stf)[0]);
+        //再重設滾動條到最上面
+            slideBox.scrollTop = 0;
+        //延遲多久再執行一次
+            setTimeout(s, delay);
+          }
+        }
+        //滑鼠移上去會暫停 移走會繼續動
+        slideBox.onmouseover=function(){pause=true;}
+        slideBox.onmouseout=function(){pause=false;}
+        //起始的地方，沒有這個就不會動囉
+        setTimeout(s, delay);
+      }
+      //網頁load完會執行一次
+      //五個屬性各別是：外面div的id名稱、包在裡面的標籤類型
+      //延遲毫秒數、速度、高度
+      slideLine('broad_box','div',2000,25,20);
+
+      // ================= content =================
+
+      const rotates = document.querySelectorAll(".content-li");
+      const rotates2 = document.querySelectorAll(".products>li");
+      const followimgs = document.querySelectorAll(".content .cyberphunk-box");
+      const followimgs2 = document.querySelectorAll(".category .cyberphunk-box");
+
+      const range = 40;
+
+      // const calcValue = (a, b) => (((a * 100) / b) * (range / 100) -(range / 2)).toFixed(1);
+      const calcValue = (a, b) => (a/b*range-range/2).toFixed(1)
+
+      let timeout;
+      document.addEventListener('mousemove', ({x, y}) => {
+        if (timeout) {
+          window.cancelAnimationFrame(timeout);
+        }
+
+        timeout = window.requestAnimationFrame(() => {
+          const yValue = calcValue(y, window.innerHeight);
+          const xValue = calcValue(x, window.innerWidth);
+
+          // content部分
+          [].forEach.call(rotates, (rotate) => {
+            rotate.style.transform = `rotateX(${yValue}deg) rotateY(${-xValue}deg) translatez(50px)`;
+          });
+
+          [].forEach.call(followimgs, (followimg) => {
+            followimg.style.transform = `translateX(${xValue*2}px) translateY(${yValue*2}px)`;
+          });
+
+          // category部分
+          [].forEach.call(rotates2, (rotate) => {
+            rotate.style.transform = `rotateX(${yValue}deg) rotateY(${-xValue}deg) translatez(50px)`;
+          });
+
+          [].forEach.call(followimgs2, (followimg) => {
+            followimg.style.transform = `translateX(${xValue*2}px) translateY(${yValue*2}px)`;
+          });
+
+      	})
+      }, false);
+
+
+  </script>
+
+</body>
+</html>
