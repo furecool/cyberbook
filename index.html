@@ -757,6 +757,7 @@
       background-color: #0003;
       /* background-color: #fff1; */
       padding: 60px 0;
+      margin: 50px;
       /* display: flex; */
     }
 
@@ -840,7 +841,7 @@
 
     .footer{
       width: 230px;
-      margin: 0 auto;
+      margin: 10px auto;
       border-radius: 2rem;
       background-color: #0008;
       color: #fff;
@@ -1511,46 +1512,46 @@
 
       // ================= mousemove =================
 
-      // const rotates = document.querySelectorAll(".content-li");
-      // const rotates2 = document.querySelectorAll(".products>li");
-      // const followimgs = document.querySelectorAll(".content .cyberphunk-box");
-      // const followimgs2 = document.querySelectorAll(".category .cyberphunk-box");
-      //
-      // const range = 40;
-      //
-      // // const calcValue = (a, b) => (((a * 100) / b) * (range / 100) -(range / 2)).toFixed(1);
-      // const calcValue = (a, b) => (a/b*range-range/2).toFixed(1)
-      //
-      // let timeout;
-      // document.addEventListener('mousemove', ({x, y}) => {
-      //   if (timeout) {
-      //     window.cancelAnimationFrame(timeout);
-      //   }
-      //
-      //   timeout = window.requestAnimationFrame(() => {
-      //     const yValue = calcValue(y, window.innerHeight);
-      //     const xValue = calcValue(x, window.innerWidth);
-      //
-      //     // content部分
-      //     [].forEach.call(rotates, (rotate) => {
-      //       rotate.style.transform = `rotateX(${-yValue}deg) rotateY(${xValue}deg) translatez(50px)`;
-      //     });
-      //
-      //     [].forEach.call(followimgs, (followimg) => {
-      //       followimg.style.transform = `translateX(${-xValue*2}px) translateY(${-yValue*2}px)`;
-      //     });
-      //
-      //     // category部分
-      //     [].forEach.call(rotates2, (rotate) => {
-      //       rotate.style.transform = `rotateX(${-yValue}deg) rotateY(${xValue}deg) translatez(50px)`;
-      //     });
-      //
-      //     [].forEach.call(followimgs2, (followimg) => {
-      //       followimg.style.transform = `translateX(${-xValue*2}px) translateY(${-yValue*2}px)`;
-      //     });
-      //
-      // 	})
-      // }, false);
+      const rotates = document.querySelectorAll(".content-li");
+      const rotates2 = document.querySelectorAll(".products>li");
+      const followimgs = document.querySelectorAll(".content .cyberphunk-box");
+      const followimgs2 = document.querySelectorAll(".category .cyberphunk-box");
+
+      const range = 40;
+
+      // const calcValue = (a, b) => (((a * 100) / b) * (range / 100) -(range / 2)).toFixed(1);
+      const calcValue = (a, b) => (a/b*range-range/2).toFixed(1)
+
+      let timeout;
+      document.addEventListener('mousemove', ({x, y}) => {
+        if (timeout) {
+          window.cancelAnimationFrame(timeout);
+        }
+
+        timeout = window.requestAnimationFrame(() => {
+          const yValue = calcValue(y, window.innerHeight);
+          const xValue = calcValue(x, window.innerWidth);
+
+          // content部分
+          [].forEach.call(rotates, (rotate) => {
+            rotate.style.transform = `rotateX(${-yValue}deg) rotateY(${xValue}deg) translatez(50px)`;
+          });
+
+          [].forEach.call(followimgs, (followimg) => {
+            followimg.style.transform = `translateX(${-xValue*2}px) translateY(${-yValue*2}px)`;
+          });
+
+          // category部分
+          [].forEach.call(rotates2, (rotate) => {
+            rotate.style.transform = `rotateX(${-yValue}deg) rotateY(${xValue}deg) translatez(50px)`;
+          });
+
+          [].forEach.call(followimgs2, (followimg) => {
+            followimg.style.transform = `translateX(${-xValue*2}px) translateY(${-yValue*2}px)`;
+          });
+
+      	})
+      }, false);
 
 
   </script>
