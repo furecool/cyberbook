@@ -601,6 +601,7 @@
     }
 
     .content-li img{
+      width: 180px;
       margin: 12px;
       border-radius: 2rem;
       box-shadow:
@@ -612,7 +613,15 @@
           /* transform: translatez(50px); */
           transition: transform 300ms ease-out;
     }
-    .content-li h3 a, .content-li p{
+    .content-li h3, .content-li p{
+      width: 220px;
+      text-align: center;
+      overflow:hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      color: #ddd;
+    }
+    .content-li h3 a{
       color: #ddd;
     }
     .content-li p span{
@@ -718,6 +727,7 @@
       color: #f65ec3;
     }
     .category li img{
+      width: 180px;
       position: relative;
       border-radius: 2rem;
       box-shadow:
@@ -897,10 +907,8 @@
               <li><a href="#">
                 <div class="cyberphunk-box">
                   <picture>
-                    <!-- <source srcset="http://fakeimg.pl/600x600/fff/3f232a/?text=carousel-1" media="(max-width: 600px)"> -->
-                    <!-- <img src="http://fakeimg.pl/1200x420/fff/3f232a/?text=carousel-1" > -->
-                    <source srcset="1s.jpg" media="(max-width: 600px)">
-                    <img src="1.jpg" alt="">
+                    <source srcset="img/banner-moons.jpg" media="(max-width: 600px)">
+                    <img src="img/banner-moon.jpg" alt="">
                   </picture>
                 </div>
               </a></li>
@@ -908,10 +916,8 @@
               <li><a href="#">
                 <div class="cyberphunk-box">
                   <picture>
-                    <!-- <source srcset="http://fakeimg.pl/600x600/fff/3f232a/?text=carousel-2" media="(max-width: 600px)"> -->
-                    <!-- <img src="http://fakeimg.pl/1200x420/fff/3f232a/?text=carousel-2"> -->
-                    <source srcset="2s.jpg" media="(max-width: 600px)">
-                    <img src="2.jpg" alt="">
+                    <source srcset="img/banner-apess.jpg" media="(max-width: 600px)">
+                    <img src="img/banner-apes.jpg" alt="">
                   </picture>
                 </div>
               </a></li>
@@ -919,24 +925,13 @@
               <li><a href="#">
                 <div class="cyberphunk-box">
                   <picture>
-                    <!-- <source srcset="http://fakeimg.pl/600x600/fff/3f232a/?text=carousel-3" media="(max-width: 600px)"> -->
-                    <!-- <img src="http://fakeimg.pl/1200x420/fff/3f232a/?text=carousel-1"> -->
-                    <source srcset="3s.jpg" media="(max-width: 600px)">
-                    <img src="3.jpg" alt="">
+                    <source srcset="img/banner-librarys.jpg" media="(max-width: 600px)">
+                    <img src="img/banner-library.jpg" alt="">
                   </picture>
                 </div>
               </a></li>
 
-              <li><a href="#">
-                <div class="cyberphunk-box">
-                  <picture>
-                    <!-- <source srcset="http://fakeimg.pl/600x600/fff/3f232a/?text=carousel-4" media="(max-width: 600px)"> -->
-                    <!-- <img src="http://fakeimg.pl/1200x420/fff/3f232a/?text=carousel-4"> -->
-                    <source srcset="4s.jpg" media="(max-width: 600px)">
-                    <img src="4.jpg" alt="">
-                  </picture>
-                </div>
-              </a></li>
+
 
             </ul>
         </div>
@@ -945,7 +940,7 @@
             <div class="circle circle-active"></div>
             <div class="circle"></div>
             <div class="circle"></div>
-            <div class="circle"></div>
+            <!-- <div class="circle"></div> -->
         </div>
 
         <div class="arrow arrow-l"><</div>
@@ -1009,10 +1004,10 @@
             <a href="###">
               <div class="cyberphunk-box">
                 <!-- <img src="http://fakeimg.pl/180x240/fff/57d9fb/?text=book"> -->
-                <img src="5.jpg">
+                <img src="img/5.jpg">
               </div>
             </a>
-	          <h3><a href="###">書名</a></h3>
+	          <h3><a href="###" title="我本將心向明月">我本將心向明月</a></h3>
 	          <p>優惠價: <span>75</span> 折 <span>267</span> 元</p>
         	</div>
           <div class="arrow arrow-l"><</div>
@@ -1021,14 +1016,14 @@
 
         <li class="content-li">
         	<div class="content-licon">
-	          <h2><a href="###">熱銷品項</a></h2>
+	          <h2><a href="###" >熱銷品項</a></h2>
             <a href="###">
               <div class="cyberphunk-box">
                 <!-- <img src="http://fakeimg.pl/180x240/fff/57d9fb/?text=book"> -->
-                <img src="6.jpg">
+                <img src="img/6.jpg">
               </div>
             </a>
-	          <h3><a href="###">書名</a></h3>
+	          <h3><a href="###" title="水猿:一個VR帝國的誕生">水猿:一個VR帝國的誕生</a></h3>
 	          <p>優惠價: <span>75</span> 折 <span>267</span> 元</p>
         	</div>
           <div class="arrow arrow-l"><</div>
@@ -1041,10 +1036,10 @@
             <a href="###">
               <div class="cyberphunk-box">
                 <!-- <img src="http://fakeimg.pl/180x240/fff/57d9fb/?text=book"> -->
-                <img src="7.jpg">
+                <img src="img/7.jpg">
               </div>
             </a>
-	          <h3><a href="###">書名</a></h3>
+	          <h3><a href="###" title="屠屍館">屠屍館</a></h3>
 	          <p>優惠價: <span>75</span> 折 <span>267</span> 元</p>
         	</div>
           <div class="arrow arrow-l"><</div>
@@ -1066,7 +1061,7 @@
 					<h2><a href="###">文學</a></h2>
           <a href="###">
             <div class="cyberphunk-box">
-              <img src="http://fakeimg.pl/180x240/fff/f448f2/?text=book">
+              <img src="img/nothing.jpg">
               <!-- <img src="8.jpg"> -->
             </div>
           </a>
@@ -1079,7 +1074,7 @@
 					<h2><a href="###">商業理財</a></h2>
           <a href="###">
             <div class="cyberphunk-box">
-              <img src="http://fakeimg.pl/180x240/fff/f448f2/?text=book">
+              <img src="img/nothing.jpg">
               <!-- <img src="9.jpg"> -->
             </div>
           </a>
@@ -1092,7 +1087,7 @@
 					<h2><a href="###">藝術</a></h2>
           <a href="###">
             <div class="cyberphunk-box">
-              <img src="http://fakeimg.pl/180x240/fff/f448f2/?text=book">
+              <img src="img/nothing.jpg">
               <!-- <img src="10.jpg"> -->
             </div>
           </a>
@@ -1105,7 +1100,7 @@
 					<h2><a href="###">歷史地理</a></h2>
           <a href="###">
             <div class="cyberphunk-box">
-              <img src="http://fakeimg.pl/180x240/fff/f448f2/?text=book">
+              <img src="img/nothing.jpg">
               <!-- <img src="11.jpg"> -->
             </div>
           </a>
@@ -1118,7 +1113,7 @@
 					<h2><a href="###">社會科學</a></h2>
           <a href="###">
             <div class="cyberphunk-box">
-              <img src="http://fakeimg.pl/180x240/fff/f448f2/?text=book">
+              <img src="img/nothing.jpg">
               <!-- <img src="12.jpg"> -->
             </div>
           </a>
@@ -1131,7 +1126,7 @@
 					<h2><a href="###">自然科學</a></h2>
           <a href="###">
             <div class="cyberphunk-box">
-              <img src="http://fakeimg.pl/180x240/fff/f448f2/?text=book">
+              <img src="img/nothing.jpg">
               <!-- <img src="13.jpg"> -->
             </div>
           </a>
@@ -1144,7 +1139,7 @@
 					<h2><a href="###">心理</a></h2>
           <a href="###">
             <div class="cyberphunk-box">
-              <img src="http://fakeimg.pl/180x240/fff/f448f2/?text=book">
+              <img src="img/nothing.jpg">
               <!-- <img src="14.jpg"> -->
             </div>
           </a>
@@ -1157,7 +1152,7 @@
 					<h2><a href="###">醫療保健</a></h2>
           <a href="###">
             <div class="cyberphunk-box">
-              <img src="http://fakeimg.pl/180x240/fff/f448f2/?text=book">
+              <img src="img/nothing.jpg">
               <!-- <img src="15.jpg"> -->
             </div>
           </a>
@@ -1170,7 +1165,7 @@
 					<h2><a href="###">飲食</a></h2>
           <a href="###">
             <div class="cyberphunk-box">
-              <img src="http://fakeimg.pl/180x240/fff/f448f2/?text=book">
+              <img src="img/nothing.jpg">
               <!-- <img src="16.jpg"> -->
             </div>
           </a>
@@ -1183,7 +1178,7 @@
 					<h2><a href="###">娛樂</a></h2>
           <a href="###">
             <div class="cyberphunk-box">
-              <img src="http://fakeimg.pl/180x240/fff/f448f2/?text=book">
+              <img src="img/nothing.jpg">
               <!-- <img src="17.jpg"> -->
             </div>
           </a>
@@ -1196,7 +1191,7 @@
 					<h2><a href="###">旅遊</a></h2>
           <a href="###">
             <div class="cyberphunk-box">
-              <img src="http://fakeimg.pl/180x240/fff/f448f2/?text=book">
+              <img src="img/nothing.jpg">
               <!-- <img src="18.jpg"> -->
             </div>
           </a>
@@ -1209,7 +1204,7 @@
 					<h2><a href="###">宗教</a></h2>
           <a href="###">
             <div class="cyberphunk-box">
-              <img src="http://fakeimg.pl/180x240/fff/f448f2/?text=book">
+              <img src="img/nothing.jpg">
               <!-- <img src="19.jpg"> -->
             </div>
           </a>
@@ -1222,7 +1217,7 @@
 					<h2><a href="###">語言</a></h2>
           <a href="###">
             <div class="cyberphunk-box">
-              <img src="http://fakeimg.pl/180x240/fff/f448f2/?text=book">
+              <img src="img/nothing.jpg">
               <!-- <img src="20.jpg"> -->
             </div>
           </a>
@@ -1235,7 +1230,7 @@
 					<h2><a href="###">計算機</a></h2>
           <a href="###">
             <div class="cyberphunk-box">
-              <img src="http://fakeimg.pl/180x240/fff/f448f2/?text=book">
+              <img src="img/nothing.jpg">
               <!-- <img src="21.jpg"> -->
             </div>
           </a>
@@ -1248,7 +1243,7 @@
 					<h2><a href="###">漫畫</a></h2>
           <a href="###">
             <div class="cyberphunk-box">
-              <img src="http://fakeimg.pl/180x240/fff/f448f2/?text=book">
+              <img src="img/nothing.jpg">
               <!-- <img src="22.jpg"> -->
             </div>
           </a>
@@ -1261,7 +1256,7 @@
 					<h2><a href="###">其他</a></h2>
           <a href="###">
             <div class="cyberphunk-box">
-              <img src="http://fakeimg.pl/180x240/fff/f448f2/?text=book">
+              <img src="img/nothing.jpg">
             </div>
           </a>
 					<h3><a href="###">書名</a></h3>
