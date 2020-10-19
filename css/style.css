@@ -1,0 +1,378 @@
+/*==================== reset ====================*/
+
+:root {
+font-size: 3px;
+--neon-color1: #fb46d4;
+--neon-color2: #16d5e8;
+--neon-color3: #7475f6;
+--neon-color4: #ff8b2e;
+--neon-color5: #34ffed;
+--neon-color6: #ff497f;
+--height: 900px;
+}
+*{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  font-size: 20px;
+}
+body{
+  background: linear-gradient(20deg, #000000, #0c1a61) fixed center center / 100% 100%;
+  overflow-x: hidden;
+  overflow-y: inherit;
+}
+
+/*==================== cyberphunk-box ====================*/
+
+.cyberphunk-box {
+  z-index: -10;
+  width: 100%;
+  position: relative;
+  /* overflow: hidden; */
+}
+.cyberphunk-box:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  content: '';
+  background: repeating-linear-gradient(to bottom, transparent, transparent 2px, rgba(0,0,0,0.7) 3px);
+  animation: img-blink 0.1s infinite linear;
+  z-index: 10;
+}
+
+@keyframes img-blink {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-1px);
+  }
+}
+
+/* ================= raining ================== */
+
+hr.raining {
+  /* width: 50px; */
+  border-color: transparent;
+  border-right-color: #fff3;
+  border-right-width: 200px;
+  position: absolute;
+  bottom: 100%;
+  /* transform-origin: 100% 50%; */
+  /* transform-origin: 10% 10%; */
+  transform-origin: 0 0;
+  animation: rain 1s infinite linear;
+}
+
+@keyframes rain {
+  0% {
+    transform: rotate(90deg) translateX(0);
+  }
+  100% {
+    transform: rotate(90deg) translateX(var(--height));
+  }
+}
+
+/*==================== wrap ====================*/
+
+.wrap{
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/*==================== header ====================*/
+
+.header{
+  display: flex;
+  /* display: block; */
+  justify-content: space-between;
+  /* max-width: 100%; */
+  max-width:1200px;
+  height: 56px;
+  margin: 0 auto;
+  background-color: #0008;
+  position: fixed;
+  top:0; /* 注意！這裡沒設之後banner會有問題 */
+  left: 0;
+  right: 0;
+  z-index: 50;
+}
+
+/* logo */
+
+.logo{
+  display: flex;
+}
+.neon {
+  width: 147px;
+  height: 47px;
+  margin: 4px 4px;
+  font-family: Yellowtail;
+  font-size: 10rem;
+  font-weight: 500;
+  color: #fff;
+  padding: 0rem 5rem 1rem;
+  border: .5rem solid #fff;
+  border-radius: 2rem;
+  animation: flicker 1.5s infinite alternate; /* 等等 keyframes會用到的地方 */
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.neon2{
+  display: none;
+  font-size: 8.5rem;
+  letter-spacing: 1rem;
+  font-family: 'Noto Sans SC', sans-serif;
+  /* font-family: 'ZCOOL QingKe HuangYou', cursive; */
+}
+
+@keyframes flicker {
+0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+    text-shadow:
+        -0.2rem -0.2rem 1rem #fff,
+        0.2rem 0.2rem 1rem #fff,
+        0 0 2rem var(--neon-color1),
+        0 0 4rem var(--neon-color1),
+        0 0 6rem var(--neon-color1),
+        0 0 8rem var(--neon-color1),
+        0 0 10rem var(--neon-color1);
+    box-shadow:
+        0 0 .5rem #fff,
+        inset 0 0 .5rem #fff,
+        0 0 2rem var(--neon-color2),
+        inset 0 0 2rem var(--neon-color2),
+        0 0 4rem var(--neon-color2),
+        inset 0 0 4rem var(--neon-color2);
+}
+
+20%, 24%, 55% {
+    text-shadow: none;
+    box-shadow: none;
+}
+}
+
+@keyframes flicker2 {
+0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+    text-shadow:
+        -0.2rem -0.2rem 1rem #fff,
+        0.2rem 0.2rem 1rem #fff,
+        0 0 2rem var(--neon-color3),
+        0 0 4rem var(--neon-color3),
+        0 0 6rem var(--neon-color3),
+        0 0 8rem var(--neon-color3),
+        0 0 10rem var(--neon-color3);
+    box-shadow:
+        0 0 .5rem #fff,
+        inset 0 0 .5rem #fff,
+        0 0 2rem var(--neon-color4),
+        inset 0 0 2rem var(--neon-color4),
+        0 0 4rem var(--neon-color4),
+        inset 0 0 4rem var(--neon-color4);
+}
+
+20%, 24%, 55% {
+    text-shadow: none;
+    box-shadow: none;
+}
+}
+
+@keyframes flicker3 {
+0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+    text-shadow:
+        -0.2rem -0.2rem 1rem #fff,
+        0.2rem 0.2rem 1rem #fff,
+        0 0 2rem var(--neon-color4),
+        0 0 4rem var(--neon-color4),
+        0 0 6rem var(--neon-color4),
+        0 0 8rem var(--neon-color4),
+        0 0 10rem var(--neon-color4);
+    box-shadow:
+        0 0 .5rem #fff,
+        inset 0 0 .5rem #fff,
+        0 0 2rem var(--neon-color3),
+        inset 0 0 2rem var(--neon-color3),
+        0 0 4rem var(--neon-color3),
+        inset 0 0 4rem var(--neon-color3);
+}
+
+20%, 24%, 55% {
+    text-shadow: none;
+    box-shadow: none;
+}
+}
+
+@keyframes flicker4 {
+0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+    text-shadow:
+        -0.2rem -0.2rem 1rem #fff,
+        0.2rem 0.2rem 1rem #fff,
+        0 0 2rem var(--neon-color5),
+        0 0 4rem var(--neon-color5),
+        0 0 6rem var(--neon-color5),
+        0 0 8rem var(--neon-color5),
+        0 0 10rem var(--neon-color5);
+    box-shadow:
+        0 0 .5rem #fff,
+        inset 0 0 .5rem #fff,
+        0 0 2rem var(--neon-color6),
+        inset 0 0 2rem var(--neon-color6),
+        0 0 4rem var(--neon-color6),
+        inset 0 0 4rem var(--neon-color6);
+}
+
+20%, 24%, 55% {
+    text-shadow: none;
+    box-shadow: none;
+}
+}
+
+@keyframes noflicker{
+0%, 100% {
+    text-shadow:
+        -0.2rem -0.2rem 1rem #fff,
+        0.2rem 0.2rem 1rem #fff,
+        0 0 2rem var(--neon-color1),
+        0 0 4rem var(--neon-color1),
+        0 0 6rem var(--neon-color1),
+        0 0 8rem var(--neon-color1),
+        0 0 10rem var(--neon-color1);
+    box-shadow:
+        0 0 .5rem #fff,
+        inset 0 0 .5rem #fff,
+        0 0 2rem var(--neon-color2),
+        inset 0 0 2rem var(--neon-color2),
+        0 0 4rem var(--neon-color2),
+        inset 0 0 4rem var(--neon-color2);
+}
+}
+
+.neon:hover {
+    /* animation: noflicker 1.5s infinite alternate; */
+}
+.logo:hover .neon1{
+  display: none;
+}
+.logo:hover .neon2{
+  display: flex;
+}
+
+/* menu */
+.menu ul{
+  float: right;
+}
+.menu li{
+  float: left;
+  margin: 7px 8px;
+  display: flex;
+}
+.menu li a{
+  display: block;
+  text-decoration:none;
+  text-align: center;
+  /* font-weight: bold; */
+  font-size: 20px;
+  color: #fff;
+  line-height:40px;
+  width: 100px;
+  border: 1px solid #fff;
+  border-radius: 2rem;
+
+  /* animation: noflicker 1.5s infinite alternate; */
+  animation: flicker 1.5s infinite alternate;
+
+}
+.menu li a:hover{
+  /* transition-duration: 0.3s; */
+  font-weight: bold;
+  border: 2px solid #fff;
+  line-height:38px;
+  width: 98px;
+}
+
+/* hamberger */
+.hamburger{
+  display:none;
+  color: #fff;
+  font-size: 50px;
+  font-weight: bold;
+  text-decoration:none;
+  border: 1px solid #fff;
+  border-radius: 2rem;
+  line-height:45px;
+  height: 45px;
+  width: 45px;
+  margin: 5px;
+  text-align: center;
+  float:right;
+
+  animation: flicker 1.5s infinite alternate;
+
+}
+.hamburger:active{
+  border: 2px solid #fff;
+  font-size: 53px;
+  height: 43px;
+  width: 43px;
+}
+
+@media(max-width: 768px){
+  .hamburger{
+    display:block;
+  }
+  .header{
+  /* background-color: #2d2d2d; */
+    background-color: #0008;
+  }
+  .header ul,.header li{
+    float: none;
+  }
+  .header li a{
+    text-align: center;
+    width: 100%;
+  }
+  .menu{
+    float: right;
+    width: 110px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s;
+    position: absolute;
+    top: 56px;
+    right: 0px;
+    background-color: #0008;
+    border-radius: 0 0 2rem 2rem;
+  }
+  .menu a{
+    margin: 7px 0;
+
+  }
+  .show-menu{
+    max-height: 400px;
+  }
+}
+
+
+/*==================== footer ====================*/
+
+.footer{
+  width: 230px;
+  margin: 10px auto;
+  border-radius: 2rem;
+  background-color: #0008;
+  color: #fff;
+  text-align: center;
+  padding: 13px 0;
+  font-family: Yellowtail;
+  animation: flicker4 1.5s infinite alternate;
+}
+
+@media(max-width: 600px){
+  .footer{
+    /* display: none; */
+  }
+}

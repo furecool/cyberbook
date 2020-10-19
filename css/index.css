@@ -1,0 +1,477 @@
+/*==================== banner ====================*/
+
+.banner{
+    /* position: absolute; */
+    position: relative;
+    /* max-width: 100%; */
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 56px;
+    left: 0;
+    right: 0;
+    z-index: 10;
+}
+.pic{
+    width: 100%;
+    overflow: hidden;
+    box-shadow:
+        0 0 10px #fff3,
+        0 0 15px #fff3,
+        0 0 20px #fff3,
+        0 0 30px #fff3;
+}
+.carousel{
+    display: flex;
+    flex-wrap: nowrap;
+    transition: all 0.5s;
+}
+.carousel li{
+  min-width: 100%;
+}
+
+.carousel img{
+  width: 100%;
+  vertical-align:top;  /* 這樣下面就不會有間隙 */
+}
+
+/* idx */
+.idx{
+  width: 100%;
+  background-color: #0003;
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+}
+.circle{
+  width: 20px;
+  height: 5px;
+  margin: 12px 5px;
+  border: 1px solid #fff;
+  border-radius: 2rem;
+  display: inline-block;
+  cursor: pointer;
+  box-shadow: inset -1px -1px 3px rgba(0,0,0,.3);
+  animation: flicker 1.5s infinite alternate;
+}
+.circle-active{
+  animation: flicker2 1.5s infinite alternate;
+}
+.circle:hover{
+  border: 2px solid #fff;
+  width: 18px;
+  height: 3px;
+}
+
+/* arrow */
+.arrow{
+  position: absolute;
+  display: none;
+  width: 40px;
+  height: 80px;
+  background-color: #0005;
+  font-family:"宋体";
+  color:#fff;
+  border: 1px solid #fff;
+  line-height:80px;
+  text-align:center;
+  font-size:30px;
+  cursor: pointer;
+  user-select: none;
+
+  animation: flicker 1.5s infinite alternate;
+}
+.arrow-l{
+  left: 0;
+  border-radius: 0 25% 25% 0;
+}
+.arrow-r{
+  right: 0;
+  border-radius: 25% 0 0 25%;
+}
+.arrow:hover{
+  background-color: #0007;
+  /* color:#ffffffcc; */
+  font-weight: bold;
+  border: 2px solid #fff;
+}
+.banner:hover .arrow{
+  display: block;
+}
+@media(max-width: 600px){
+  .banner{
+    /* display: none; */
+  }
+}
+
+/*==================== broadcast ====================*/
+
+.broadcast{
+  width: 100%;
+  height: 38px;
+  position: sticky;
+  top: 56px;
+  margin: 56px auto 50px;
+  background-color: #0008;
+  /* background-color: #fffc; */
+  display: flex;
+  align-items: center;
+  z-index: 20;
+}
+
+.broad-tag{
+  /* width: 100px; */
+  /* height: 20px; */
+  border: 1px solid #fff;
+  border-radius: 2rem;
+}
+.broad-tag p{
+  cursor: default;
+  text-align: center;
+  padding: 0 15px;
+  color: #fff;
+  font-size: 18px;
+  line-height: 30px;
+  font-family: Yellowtail;
+  animation: flicker2 1.5s infinite alternate;
+}
+
+.broad_box{
+  flex: 1;
+  height:20px;
+  overflow:hidden;
+}
+.broad{
+  text-align: center;
+  /* padding: 0 20px; */
+  height:20px;
+  overflow:hidden;
+}
+.broad a{
+  width: 100%;
+  height: 100%;
+  display: block;
+  color: #ec7fba;
+  /* color: #fff; */
+  font-size: 18px;
+  line-height: 20px;
+}
+
+  @media(max-width: 768px){
+    .broadcast{
+      display: none;
+    }
+  }
+
+/*==================== content ====================*/
+
+.content{
+  margin: 60px auto;
+  max-width: 100%;
+  /* background-color: #fff1; */
+  background-color: #0003;
+  padding: 70px 0;
+  /* overflow: hidden; */
+  position: relative;
+  z-index: 10;
+}
+.content ul{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  perspective: 1000px;
+}
+.content-li{
+  flex: 1;
+  display: flex;
+  flex-direction: column; /* 預設是row */
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin: 0 5px;
+  max-width: 360px;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+  transform: translatez(50px);
+  transition: transform 300ms ease-out;
+}
+.content-licon{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 200ms ease-out;
+}
+.content-li:hover .content-licon{
+  transform-style: preserve-3d;
+  transform: translatez(100px);
+  transition: transform 200ms ease-out;
+}
+.content-li h2{
+  margin: 7px 0;
+  display: flex;
+  align-items: center;
+}
+.content-li h2 a{
+  border: 1px solid #ffc4e1;
+  border-radius: 2rem;
+  padding: 3px 7px;
+  font-weight: 400;
+  font-size: 22px;
+  color: #b1ffe3;
+  animation: flicker4 1.5s infinite alternate;
+}
+.content-li h2 a:hover{
+  color: #fff;
+  border: 2px solid #ffc4e1;
+  padding: 2px 6px;
+  font-weight:bold;
+}
+
+.content-li img{
+  width: 180px;
+  margin: 12px;
+  border-radius: 2rem;
+  box-shadow:
+      0 0 10px #fff3,
+      0 0 15px #fff3,
+      0 0 20px #fff3,
+      0 0 30px #fff3;
+      /* transform-style: preserve-3d; */
+      /* transform: translatez(50px); */
+      transition: transform 300ms ease-out;
+}
+.content-li h3, .content-li p{
+  width: 220px;
+  text-align: center;
+  overflow:hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  color: #ddd;
+}
+.content-li h3 a{
+  color: #ddd;
+}
+.content-li p span{
+  color: #f65ec3;
+}
+
+.content-li .arrow{
+  display: block;
+}
+
+@media(max-width: 768px){
+  .content-licon{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 50px 0;
+  }
+  .content ul{
+    display: block;
+  }
+  .content-li{
+    margin: 50px auto;
+  }
+  .content-li h2{
+    margin: 20px;
+  }
+  .content-li h2 a{
+    font-size: 26px;
+    padding: 5px 10px;
+  }
+  .content-li h2 a:hover{
+    padding: 4px 9px;
+  }
+  .content-li img{
+    width: 220px;
+  }
+}
+
+@media(max-width: 600px){
+  .content{
+    /* display: none; */
+  }
+}
+
+
+
+/*==================== category ====================*/
+
+.category{
+  position: relative;
+  z-index: 10;
+  background-color: #0003;
+  width: 100%;
+  padding: 60px 0;
+  /* overflow: hidden; */
+  /* background-color: #fff1; */
+}
+.category ul{
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 100%;
+  margin: 100px auto;
+  perspective: 1500px;
+}
+.category li{
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 50px 0;
+  perspective: 1500px;
+  transform-style: preserve-3d;
+  transform: translatez(50px);
+  transition: transform 300ms ease-out;
+}
+.product-licon{
+  transition: transform 200ms ease-out;
+}
+.category li:hover .product-licon{
+  transform-style: preserve-3d;
+  transform: translatez(100px);
+  transition: transform 200ms ease-out;
+}
+.category li h2{
+  margin-bottom: 8px;
+}
+.category li h2 a{
+  font-weight: 100;
+  font-size: 26px;
+  color: var(--neon-color2);
+  text-shadow:
+      0 0 5px var(--neon-color2),
+      0 0 10px var(--neon-color2),
+      0 0 15px var(--neon-color2);
+}
+.category li h2 a:hover{
+  font-weight:bold;
+}
+.category li h3 a, .category li p{
+  color: #ddd;
+}
+.category li p span{
+  color: #f65ec3;
+}
+.category li img{
+  width: 180px;
+  position: relative;
+  border-radius: 2rem;
+  box-shadow:
+      0 0 10px #fff3,
+      0 0 15px #fff3,
+      0 0 20px #fff3,
+      0 0 30px #fff3;
+}
+
+@media(max-width: 768px){
+.category li{
+  width: 33%;
+}
+}
+
+@media(max-width: 600px){
+  .category{
+    padding: 130px 0;
+  }
+  .category li{
+    width: 50%;
+    /* display: none; */
+  }
+}
+@media(max-width: 400px){
+  .category li{
+    margin: 20px;
+    width: 100%;
+    /* display: none; */
+  }
+}
+
+
+/*==================== mail ====================*/
+
+.mail{
+  width: 100%;
+  background-color: #0003;
+  padding: 60px 0;
+  margin: 50px 0;
+}
+
+.mail-title{
+  cursor: default;
+  color: #fff;
+  width: 115px;
+  margin: 0 auto;
+  padding: 12px;
+  text-align: center;
+  font-size: 25px;
+  border: 1px solid #fff;
+  border-radius: 2rem;
+  animation: flicker2 1.5s infinite alternate;
+}
+.email-row{
+  justify-content: space-between;
+  display: flex;
+  padding: 0 3% 50px;
+  margin: 50px auto 0;
+}
+.email-col{
+  position: relative;
+  display: inline-block;
+  width: 44%;
+  padding: 0 3%;
+}
+.input-style {
+  box-sizing: border-box;
+  border: none;
+  font-size: 1em;
+  padding-left: 20px;
+  width: 100%;
+  margin-bottom: 15px;
+}
+.input-height{
+  height: 59px;
+}
+#mail-message {
+  height: 130px;
+  padding-top: 15px;
+  resize:none;
+  /* margin-bottom: 22px; */
+}
+#submitButton {
+  cursor: pointer;
+  background: transparent;
+  color: #fff;
+  width: 150px;
+  height: 40px;
+  border: 1px solid #fff;
+  border-radius: 50px;
+  padding-right: 20px;
+  margin-top: 7px;
+  margin-bottom: 26px;
+  animation: flicker3 1.5s infinite alternate;
+}
+#submitButton:hover{
+  font-weight: bold;
+  border: 2px solid #fff;
+}
+
+@media(max-width: 768px){
+  .email-row{
+    display: block;
+  }
+  .email-col{
+    display: block;
+    width: 80%;
+    margin: 0 auto;
+  }
+}
+
+@media(max-width: 600px){
+  .mail{
+    /* display: none; */
+  }
+}

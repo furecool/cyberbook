@@ -1,0 +1,137 @@
+/*==================== path ====================*/
+
+.path{
+  margin-top: 56px;
+  display: flex;
+}
+.path li{
+  position: relative;
+  padding: 6px 8px;
+}
+.path li a{
+  color: #aaa;
+  font-size: 14px;
+}
+.path li+li::before{
+  content: '/';
+  color: #aaa;
+  position: absolute;
+  left: 0;
+}
+
+/*==================== main ====================*/
+
+.main{
+  width: 100%;
+  display: flex;
+}
+.col{
+  /* border: 1px solid #aaa; */
+  color: #aaa;
+  margin: 25px 0;
+}
+.col-1{
+  flex: 9;
+  margin-right: 10px;
+  margin-left: 10px;
+  display: flex;
+  justify-content: center;
+}
+.pic{
+  /* max-width: 440px; */
+  max-width: 100%;
+}
+img{
+  width: 100%;
+}
+.col-2{
+  flex: 10;
+  margin-right: 10px;
+  padding: 0 10px;
+}
+h1{
+  font-size: 26px;
+}
+h2{
+  font-size: 26px;
+}
+.col-2 ul{
+  margin: 1em 0;
+}
+.col-2 ul li{
+  line-height: 2em;
+}
+a{
+  color: #aaa;
+}
+.price{
+  background-color: #0003;
+}
+.price .del{
+  text-decoration: line-through;
+}
+.price strong{
+  color: #f653ff;
+}
+.col-3{
+  flex: 5;
+  padding: 0 10px;
+}
+button{
+  display: block;
+  width: 100%;
+  margin: 10px auto;
+  background: transparent;
+  line-height: 2em;
+  color: #fff;
+  border: 1px solid #fff;
+  border-radius: 2rem;
+  text-align: center;
+  animation: flicker2 1.5s infinite alternate;
+}
+button:hover{
+  border: 2px solid #fff;
+  font-weight: bold;
+  line-height: 1.9em;
+}
+.comment {
+  color: #f653ff;
+}
+.comment li {
+  font-size: 30px;
+  display: inline;
+}
+
+@media(max-width: 768px){
+  .main{
+    width: 100%;
+    display: block;
+  }
+}
+
+/*==================== info ====================*/
+
+.info{
+  margin: 50px 0;
+  padding: 30px;
+  color: #aaa;
+  background-color: #0003;
+}
+.info > li{
+  margin: 50px 0;
+}
+.info .title{
+  font-size: 26px;
+  color: var(--neon-color2);
+  text-shadow:
+      0 0 5px var(--neon-color2),
+      0 0 10px var(--neon-color2),
+      0 0 15px var(--neon-color2);
+}
+.info .text{
+  margin: 20px 0;
+}
+.info p{
+  line-height: 1.5em;
+  margin: 1em 0;
+}
