@@ -1,7 +1,7 @@
 /*==================== path ====================*/
 
 .path{
-  margin-top: 56px;
+  margin-top: 87px;
   display: flex;
 }
 .path li{
@@ -77,7 +77,7 @@ a{
   flex: 5;
   padding: 0 10px;
 }
-button{
+.col-3 button{
   display: block;
   width: 100%;
   margin: 10px auto;
@@ -89,7 +89,7 @@ button{
   text-align: center;
   animation: flicker2 1.5s infinite alternate;
 }
-button:hover{
+.col-3 button:hover{
   border: 2px solid #fff;
   font-weight: bold;
   line-height: 1.9em;

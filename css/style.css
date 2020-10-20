@@ -93,7 +93,7 @@ hr.raining {
   max-width:1200px;
   height: 56px;
   margin: 0 auto;
-  background-color: #0008;
+  background-color: #000c;
   position: fixed;
   top:0; /* 注意！這裡沒設之後banner會有問題 */
   left: 0;
@@ -354,6 +354,53 @@ hr.raining {
   .show-menu{
     max-height: 400px;
   }
+}
+
+/*==================== search ====================*/
+
+.search{
+  max-width: 1200px;
+  margin: 0 auto;
+  position: fixed;
+  top: 56px;
+  left: 0;
+  right: 0;
+  z-index: 40;
+}
+.search-box{
+  display: flex;
+  /* justify-content: flex-end; */
+  height: 31px;
+}
+.search input{
+  flex-grow: 1;
+  /* width: 400px; */
+  background-color: #111a;
+  border: none;
+  border-right: 1px solid #ec7fba;
+  padding-left: 10px;
+  color: #ec7fba;
+  font-size: 16px;
+}
+.search ::placeholder {
+  color: #ec7fba;
+  font-size: 16px;
+}
+.search select, .search option{
+  width: 80px;
+  padding: 0 10px;
+  font-size: 16px;
+  background-color: #111a;
+  color: #ec7fba;
+  border: none;
+  /* border-right: 1px solid #ec7fba; */
+}
+.search button{
+  width: 70px;
+  font-size: 16px;
+  background-color: #111a;
+  color: #ec7fba;
+  border: none;
 }
 
 
