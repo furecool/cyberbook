@@ -60,7 +60,107 @@
 
     <!--================= cart ================-->
 
-    <div class="about">購物車建構中......</div>
+    <div class="cart">
+
+      <div class="cart-box">
+
+        <!-- title-active -->
+
+        <div class="title">
+          <h3 class="active">購物車</h3>
+          <h3>願望清單</h3>
+        </div>
+
+        <!-- cart-content -->
+
+        <div class="cart-content">
+
+          <div class="cart-zone shopping">
+
+            <div class="thead">
+              <ul>
+                <li class="li-1"><input type="checkbox" onclick="check_all(this,'c')">全選</li>
+                <li class="li-2">商品名稱</li>
+                <li class="li-3">數量</li>
+                <li class="li-4">價格</li>
+                <li class="li-5">小計</li>
+                <li class="li-6">庫存</li>
+                <li class="li-7">變更名細</li>
+              </ul>
+            </div>
+
+            <div class="tbody">
+              <ul>
+                <li class="li-1"><input type="checkbox" name="c"><img src="img/cover-moon.jpg" alt=""></li>
+                <li class="li-2"><h5>我本將心向明月</h5></li>
+                <li class="li-3"><input type="tel" min="1" max="999" value="1"></li>
+                <li class="li-4">$267</li>
+                <li class="li-5">$267</li>
+                <li class="li-6">可供貨</li>
+                <li class="li-7"><p><a href="">放入願望清單</a></p><p><a href="">刪除</a></p></li>
+              </ul>
+            </div>
+
+            <div class="tbody">
+              <ul>
+                <li class="li-1"><input type="checkbox" name="c"><img src="img/cover-library.jpg" alt=""></li>
+                <li class="li-2"><h5>圖屍館</h5></li>
+                <li class="li-3"><input type="tel" min="1" max="999" value="1"></li>
+                <li class="li-4">$267</li>
+                <li class="li-5">$267</li>
+                <li class="li-6">可供貨</li>
+                <li class="li-7"><p><a href="">放入願望清單</a></p><p><a href="">刪除</a></p></li>
+              </ul>
+            </div>
+
+            <div class="total">
+              <p>總共 <span>2</span> 項商品， <span>534</span> 元</p>
+            </div>
+
+            <div class="checkout">
+              <a href=""><p>繼續逛逛</p></a>
+              <a href=""><p>結 帳</p></a>
+            </div>
+
+          </div>
+
+          <!-- wish -->
+
+          <div class="cart-zone wish">
+
+            <div class="thead">
+              <ul>
+                <li class="li-1"><input type="checkbox" onclick="check_all(this,'c')">全選</li>
+                <li class="li-2">商品名稱</li>
+                <li class="li-4">價格</li>
+                <li class="li-6">庫存</li>
+                <li class="li-7">變更名細</li>
+              </ul>
+            </div>
+
+            <div class="tbody">
+              <ul>
+                <li class="li-1"><input type="checkbox" name="c"><img src="img/cover-ape.jpg" alt=""></li>
+                <li class="li-2"><h5>水猿:一個VR帝國的誕生</h5></li>
+                <li class="li-4">$267</li>
+                <li class="li-6">可供貨</li>
+                <li class="li-7"><p><a href="">放入購物車</a></p><p><a href="">刪除</a></p></li>
+              </ul>
+            </div>
+
+            <div class="checkout">
+              <a href=""><p>繼續逛逛</p></a>
+              <a href=""><p>整批放入購物車</p></a>
+            </div>
+
+          </div>
+
+        </div>
+
+
+      </div>
+
+    </div>
 
     <!--================= Footer ====================-->
 
@@ -69,6 +169,32 @@
     </div>
 
   </div>
+
+  <script type="text/javascript">
+
+  // toggle active
+  $(function () {
+
+    $(function(){
+      $("h3").click(function(){
+        var idx=$(this).index();
+        $(this).addClass("active");
+        $(this).siblings().removeClass("active");
+        $(".cart-zone").eq(idx).show().siblings().hide();
+      });
+    });
+
+  });
+
+  // checkbox
+  function check_all(obj,cName)
+  {
+      var checkboxs = document.getElementsByName(cName);
+      for(var i=0;i<checkboxs.length;i++){checkboxs[i].checked = obj.checked;}
+  }
+
+
+  </script>
 
 </body>
 </html>

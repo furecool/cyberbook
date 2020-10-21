@@ -47,7 +47,8 @@
   width: 100%;
 }
 .login-box input:focus{
-  background-color: var(--neon-color4);
+  opacity: .6;
+  background-color: var(--neon-color2);
 }
 .login-box a{
   font-size: 14px;
@@ -60,7 +61,7 @@
   width: 125px;
   /* border: 1px solid #fff; */
   border-radius: 2rem;
-  color: #fff;
+  color: var(--neon-color4);
   position: absolute;
   background-color: transparent;
   bottom: -60px;
