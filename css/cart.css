@@ -72,12 +72,10 @@ h3:hover, .active{
   padding: 5px;
   font-size: 16px;
 }
-.tbody{
-  /* background-color: #88f; */
-  border-bottom: 1px solid #777;
-}
+
 .tbody ul{
   display: flex;
+  border-bottom: 1px solid #777;
 }
 .tbody ul li{
   display: flex;
@@ -99,7 +97,14 @@ input::-webkit-inner-spin-button {
 li img{
   width: 70px;
 }
-li p{
+li a{
+  color: #fff;
+}
+.li-7 a{
+  width: 100px;
+  display: block;
+}
+.li-7 p{
   border: 1px solid #fff;
   border-radius: 2rem;
   background-color: #aaa5;
@@ -107,10 +112,6 @@ li p{
   margin: 2px;
   padding: 2px;
   text-align: center;
-}
-li a{
-  display: block;
-  color: #fff;
   font-size: 16px;
 }
 .total{
@@ -180,6 +181,15 @@ li a{
   .li-7{
     flex-direction: row;
     flex: 55%;
+  }
+  .li-7 a{
+    flex: 1;
+    /* width: 50%; */
+  }
+  .li-7 p{
+    width: 80%;
+    margin: 2px;
+    padding: 2px;
   }
 
 
