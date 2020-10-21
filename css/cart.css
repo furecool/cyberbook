@@ -102,6 +102,7 @@ li img{
 li p{
   border: 1px solid #fff;
   border-radius: 2rem;
+  background-color: #aaa5;
   width: 100%;
   margin: 2px;
   padding: 2px;
@@ -129,6 +130,7 @@ li a{
 }
 .checkout p{
   color: #fff;
+  background-color: #aaa5;
   width: 150px;
   height: 40px;
   margin: 5px;
@@ -138,6 +140,11 @@ li a{
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.checkout .checkout-btn{
+  background-color: var(--neon-color4);
+  border: 1px solid var(--neon-color4);
+  font-weight: bold;
 }
 
 .wish{
@@ -168,11 +175,11 @@ li a{
     flex-basis: 15%;
   }
   .li-6{
-    flex: 45%;
+    flex: 35%;
   }
   .li-7{
     flex-direction: row;
-    flex: 45%;
+    flex: 55%;
   }
 
 

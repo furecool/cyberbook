@@ -10,6 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@100;300;400;500;700;900&family=ZCOOL+QingKe+HuangYou&display=swap" rel="stylesheet">
   <script src="js/jquery-3.1.1.min.js"></script>
   <script src="js/all.js"></script>
+  <script src="js/cart.js"></script>
   <title>CyberPuke-購物車</title>
 </head>
 <body>
@@ -97,7 +98,7 @@
                 <li class="li-4">$267</li>
                 <li class="li-5">$267</li>
                 <li class="li-6">可供貨</li>
-                <li class="li-7"><p><a href="">放入願望清單</a></p><p><a href="">刪除</a></p></li>
+                <li class="li-7"><p><a href="###">放入願望清單</a></p><p><a href="###">刪除</a></p></li>
               </ul>
             </div>
 
@@ -109,7 +110,7 @@
                 <li class="li-4">$267</li>
                 <li class="li-5">$267</li>
                 <li class="li-6">可供貨</li>
-                <li class="li-7"><p><a href="">放入願望清單</a></p><p><a href="">刪除</a></p></li>
+                <li class="li-7"><p><a href="###">放入願望清單</a></p><p><a href="###">刪除</a></p></li>
               </ul>
             </div>
 
@@ -118,8 +119,8 @@
             </div>
 
             <div class="checkout">
-              <a href=""><p>繼續逛逛</p></a>
-              <a href=""><p>結 帳</p></a>
+              <a href="index.html"><p>繼續逛逛</p></a>
+              <a href="###"><p class="checkout-btn">結 帳</p></a>
             </div>
 
           </div>
@@ -144,13 +145,13 @@
                 <li class="li-2"><h5>水猿:一個VR帝國的誕生</h5></li>
                 <li class="li-4">$267</li>
                 <li class="li-6">可供貨</li>
-                <li class="li-7"><p><a href="">放入購物車</a></p><p><a href="">刪除</a></p></li>
+                <li class="li-7"><p><a href="###">放入購物車</a></p><p><a href="###">刪除</a></p></li>
               </ul>
             </div>
 
             <div class="checkout">
-              <a href=""><p>繼續逛逛</p></a>
-              <a href=""><p>整批放入購物車</p></a>
+              <a href="index.html"><p>繼續逛逛</p></a>
+              <a href="###"><p>整批放入購物車</p></a>
             </div>
 
           </div>
@@ -170,31 +171,6 @@
 
   </div>
 
-  <script type="text/javascript">
-
-  // toggle active
-  $(function () {
-
-    $(function(){
-      $("h3").click(function(){
-        var idx=$(this).index();
-        $(this).addClass("active");
-        $(this).siblings().removeClass("active");
-        $(".cart-zone").eq(idx).show().siblings().hide();
-      });
-    });
-
-  });
-
-  // checkbox
-  function check_all(obj,cName)
-  {
-      var checkboxs = document.getElementsByName(cName);
-      for(var i=0;i<checkboxs.length;i++){checkboxs[i].checked = obj.checked;}
-  }
-
-
-  </script>
 
 </body>
 </html>

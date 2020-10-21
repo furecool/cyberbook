@@ -18,20 +18,23 @@
 .login-box{
   z-index: 10;
   max-width: 300px;
-  border: solid 3px var(--neon-color2);
+  border: solid 3px #fff;
   border-radius: 2rem;
-  background: #0003;
+  background: #aaa2;
   box-sizing: border-box;
   padding: 0 1em 5em 1em;
-  color: var(--neon-color2);
+  color: #fff;
   text-shadow:
-    0 0 5px var(--neon-color2),
-    0 0 10px var(--neon-color2),
-    0 0 15px var(--neon-color2);
+      -0.2rem -0.2rem 1rem #fff,
+      0.2rem 0.2rem 1rem #fff,
+      0 0 2rem #fff;
   box-shadow:
-    0 0 5px var(--neon-color2),
-    0 0 10px var(--neon-color2),
-    0 0 15px var(--neon-color2);
+      0 0 .5rem #fff,
+      inset 0 0 .5rem #fff,
+      0 0 2rem #fff,
+      inset 0 0 2rem #fff,
+      0 0 4rem #fff,
+      inset 0 0 4rem #fff;
 }
 .login-box form{
   position: relative;
@@ -44,39 +47,58 @@
   color: #fff;
 }
 .login-box input{
-  width: 100%;
+  color: var(--neon-color4);
+  background-color: #0003;
+  margin-bottom: 10px;
+  padding-left: 10px;
+  font-size: 16px;
+  line-height: 2em;
+  width: 95%;
 }
 .login-box input:focus{
-  opacity: .6;
-  background-color: var(--neon-color2);
+  color: var(--neon-color4);
+  background-color: #0003;
 }
 .login-box a{
   font-size: 14px;
-  color: var(--neon-color2);
+  color: #fff;
 }
 .login-box a:focus,.login-box a:hover{
   color: #fff;
 }
 .login-box button{
   width: 125px;
-  /* border: 1px solid #fff; */
+  border: 1px solid #fff;
   border-radius: 2rem;
-  color: var(--neon-color4);
+  color: #fff;
   position: absolute;
   background-color: transparent;
   bottom: -60px;
+  text-shadow:
+    0 0 5px #fff,
+    0 0 10px #fff,
+    0 0 15px #fff;
+  box-shadow:
+    0 0 .5rem #fff,
+    inset 0 0 .5rem #fff,
+    0 0 2rem #fff,
+    inset 0 0 2rem #fff
+    ;
+}
+.login-box .Sign-up{
+  left: 0px;
+}
+.login-box .Sign-in{
+  right: 0px;
   text-shadow:
     0 0 5px var(--neon-color4),
     0 0 10px var(--neon-color4),
     0 0 15px var(--neon-color4);
   box-shadow:
-    0 0 5px var(--neon-color4),
-    0 0 10px var(--neon-color4),
-    0 0 15px var(--neon-color4);
-}
-.Sign-up{
-  left: 0px;
-}
-.Sign-in{
-  right: 0px;
+    0 0 .5rem var(--neon-color4),
+    inset 0 0 .5rem var(--neon-color4),
+    0 0 2rem var(--neon-color4),
+    inset 0 0 2rem var(--neon-color4),
+    0 0 4rem var(--neon-color4),
+    inset 0 0 4rem var(--neon-color4);
 }
