@@ -1,25 +1,33 @@
 .about{
   margin: 56px 0;
   width: 100%;
-  height: 80vh;
   background-color: #0003;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: var(--neon-color2);
-  text-shadow:
-      0 0 5px var(--neon-color2),
-      0 0 10px var(--neon-color2),
-      0 0 15px var(--neon-color2);
+}
+.about-box{
+  border: solid 3px #fff;
+  border-radius: 2rem;
+  background: #aaa2;
+  padding: 0 1em 1em 1em;
+  margin: 2em 1em 0;
+  animation: flicker 1.5s infinite alternate;
 }
 .about h1{
   margin: 40px;
   text-align: center;
   font-size: 28px;
+  color: #eee;
+  text-shadow:
+      0 0 10px var(--neon-color2);
 }
 .about p{
   margin: 20px;
-  width: 500px;
+  max-width: 500px;
   line-height: 2em;
+  color: #eee;
+  text-shadow:
+      0 0 10px var(--neon-color2);
 }

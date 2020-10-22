@@ -27,7 +27,7 @@
 }
 .col{
   /* border: 1px solid #aaa; */
-  color: #aaa;
+  color: #ddd;
   margin: 25px 0;
 }
 .col-1{
@@ -62,7 +62,7 @@ h2{
   line-height: 2em;
 }
 a{
-  color: #aaa;
+  color: #ddd;
 }
 .price{
   background-color: #0003;
@@ -114,7 +114,7 @@ a{
 .info{
   margin: 50px 0;
   padding: 30px;
-  color: #aaa;
+  color: #ddd;
   background-color: #0003;
 }
 .info > li{
