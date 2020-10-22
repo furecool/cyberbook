@@ -24,11 +24,18 @@
 .main{
   width: 100%;
   display: flex;
+  box-sizing: border-box;
+
+  border: solid 2px #ddd;
+  border-radius: 2rem;
+  background: #aaa2;
+  animation: flicker 1.5s infinite alternate;
 }
 .col{
   /* border: 1px solid #aaa; */
   color: #ddd;
   margin: 25px 0;
+  text-shadow: none;
 }
 .col-1{
   flex: 9;
@@ -116,9 +123,15 @@ a{
   padding: 30px;
   color: #ddd;
   background-color: #0003;
+
+  border: solid 2px #ddd;
+  border-radius: 2rem;
+  background: #aaa2;
+  animation: flicker 1.5s infinite alternate;
 }
 .info > li{
   margin: 50px 0;
+  text-shadow: none;
 }
 .info .title{
   font-size: 26px;

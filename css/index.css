@@ -177,6 +177,11 @@
   /* overflow: hidden; */
   position: relative;
   z-index: 10;
+
+  border: solid 2px #ddd;
+  border-radius: 2rem;
+  background: #aaa2;
+  animation: flicker 1.5s infinite alternate;
 }
 .content ul{
   display: flex;
@@ -250,6 +255,7 @@
   white-space: nowrap;
   text-overflow: ellipsis;
   color: #ddd;
+  text-shadow: none;
 }
 .content-li h3 a{
   color: #ddd;
@@ -263,6 +269,9 @@
 }
 
 @media(max-width: 768px){
+  .content{
+    top: 80px;
+  }
   .content-licon{
     display: flex;
     flex-direction: column;
@@ -306,8 +315,11 @@
   background-color: #0003;
   width: 100%;
   padding: 60px 0;
-  /* overflow: hidden; */
-  /* background-color: #fff1; */
+
+  border: solid 2px #ddd;
+  border-radius: 2rem;
+  background: #aaa2;
+  animation: flicker 1.5s infinite alternate;
 }
 .category ul{
   display: flex;
@@ -352,6 +364,7 @@
 }
 .category li h3 a, .category li p{
   color: #ddd;
+  text-shadow: none;
 }
 .category li p span{
   color: #f65ec3;
@@ -395,9 +408,14 @@
 
 .mail{
   width: 100%;
-  background-color: #0003;
+  /* background-color: #0003; */
   padding: 60px 0;
   margin: 50px 0;
+
+  border: solid 2px #ddd;
+  border-radius: 2rem;
+  background: #aaa2;
+  animation: flicker 1.5s infinite alternate;
 }
 
 .mail-title{
