@@ -12,9 +12,7 @@
   width: 90%;
 }
 .title{
-  margin-bottom: 5px;
   display: flex;
-  border-bottom: 1px solid #fff;
 }
 h3{
   font-weight:normal;
@@ -27,8 +25,14 @@ h3{
   cursor: default;
 }
 h3:hover, .active{
-  font-weight: bold;
-  background-color: #aaa5;
+  /* font-weight: bold; */
+  /* background-color: #aaa5; */
+  animation: flicker 1.5s infinite alternate;
+}
+.line{
+  border: 1px solid #fff;
+  margin-bottom: 5px;
+  animation: flicker 1.5s infinite alternate;
 }
 /* .active{
   font-weight: bold;
@@ -131,7 +135,6 @@ li a{
   color: var(--neon-color1);
 }
 .checkout{
-  border-top: 1px solid #fff;
   padding: 10px;
   display: flex;
   justify-content: flex-end;
@@ -149,7 +152,7 @@ li a{
   align-items: center;
   justify-content: center;
 }
-.checkout .checkout-btn{
+.checkout .bright-btn{
   background-color: var(--neon-color4);
   border: 1px solid var(--neon-color4);
   font-weight: bold;
