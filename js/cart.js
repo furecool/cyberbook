@@ -6,7 +6,7 @@ function check_all(obj,cName){
 
 $(function () {
 
-  // toggle active
+  // toggle .active
   $(function(){
     $("h3").click(function(){
       var idx=$(this).index();
@@ -40,29 +40,35 @@ $(function () {
     count();
   });
 
+
+  // 當數量改變時
+  $(".tbody ").bind("input propertychange", function () {
+    count();
+  });
+
   // count
-
   count();
-
   function count(){
 
-    // console.log($(".shopping .count").eq(0).text());
-    // console.log($(".shopping .tbody .li-3 input").eq(0).val());
+    // === 單項的: 數量*價格 = 小計 ===
+      for (var i = 0; i < $(".tbody ul").length; i++){
+        // 第5行 = 第3行 * 第4行
+        $(".tbody .li-5").eq(i).text($(".tbody .li-3 input").eq(i).val()*$(".tbody .li-4").eq(i).text());
+      }
 
-    var total = 0;
-    $(".shopping .count").each(function(){
-       total += parseInt($(this).text());
-    });
-    // console.log(total);
-    $(".all-count").text(total);
-
-
+    // === 數量加總 ===
     var amount = 0;
     $(".shopping .tbody .li-3 input").each(function(){
       amount += parseInt($(this).val());
     });
-    // console.log(amount);
-    $(".prod").text(amount);
+    $(".c-amount").text(amount);
+
+    // === 小計加總 ===
+    var total = 0;
+    $(".shopping .tbody .li-5").each(function(){
+       total += parseInt($(this).text());
+    });
+    $(".c-total").text(total);
 
   }
 
