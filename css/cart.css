@@ -100,6 +100,13 @@ li img{
 li a{
   color: #fff;
 }
+.tbody ul .li-5{
+  color: var(--neon-color1);
+}
+.li-3 input{
+  width: 1.5em;
+  text-align: center;
+}
 .li-7 a{
   width: 100px;
   display: block;
