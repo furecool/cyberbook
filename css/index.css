@@ -234,18 +234,19 @@
   padding: 2px 6px;
   font-weight:bold;
 }
-
+.content .cyberphunk-box:before,
+.category .cyberphunk-box:before{
+  height: 98%;
+}
 .content-li img{
   width: 180px;
-  margin: 12px;
+  /* margin: 12px; */
   border-radius: 2rem;
   box-shadow:
       0 0 10px #fff3,
       0 0 15px #fff3,
       0 0 20px #fff3,
       0 0 30px #fff3;
-      /* transform-style: preserve-3d; */
-      /* transform: translatez(50px); */
       transition: transform 300ms ease-out;
 }
 .content-li h3, .content-li p{

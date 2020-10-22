@@ -28,25 +28,26 @@
 
   border: solid 2px #ddd;
   border-radius: 2rem;
-  background: #aaa2;
+  background-color: #aaa2;
   animation: flicker 1.5s infinite alternate;
 }
 .col{
   /* border: 1px solid #aaa; */
   color: #ddd;
-  margin: 25px 0;
+  margin: 25px 10px;
   text-shadow: none;
 }
 .col-1{
   flex: 9;
-  margin-right: 10px;
-  margin-left: 10px;
+  /* margin-right: 10px; */
+  margin-left: 25px;
   display: flex;
   justify-content: center;
 }
 .pic{
   /* max-width: 440px; */
   max-width: 100%;
+  z-index: 10;
 }
 img{
   width: 100%;
@@ -82,6 +83,7 @@ a{
 }
 .col-3{
   flex: 5;
+  margin-right: 25px;
   padding: 0 10px;
 }
 .col-3 button{
