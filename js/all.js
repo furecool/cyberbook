@@ -27,13 +27,13 @@ $(document).ready(function(){
       // 有 .raining的話先刪掉，不然 $(window).resize時會重複呼叫，螢幕會爆
       $(".raining").detach();
       let rainElement;
-      let counter = 50; // 雨下多大
+      let counter = 10; // 雨下多大
       for (let i = 0; i < counter; i++) {
         rainElement = document.createElement("hr");
         rainElement.className = "raining";
         rainElement.style.left = Math.floor(Math.random() * window.innerWidth) + "px";
         rainElement.style.animationDuration = 0.2 + Math.random() * 0.2 + "s";
-        rainElement.style.animationDelay = Math.random() * 5 + "s";
+        rainElement.style.animationDelay = Math.random() * 1 + "s";
         document.body.appendChild(rainElement);
       }
     }

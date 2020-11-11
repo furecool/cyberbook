@@ -4,7 +4,8 @@ function check_all(obj,cName){
     for(var i=0;i<checkboxs.length;i++){checkboxs[i].checked = obj.checked;}
 }
 
-$(function () {
+// $(function ()
+$(document).ready(function(){
 
   // toggle .active
   $(function(){
